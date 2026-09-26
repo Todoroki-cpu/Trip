@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>メルボルン家族滞在のしおり | 20-Day Melbourne Family Guide</title>
+  <meta name="description" content="小さな子どもと暮らすメルボルン20日間滞在の生活ガイド。ノース・メルボルン／パークビル周辺の遊び場、交通、スーパー、カフェ、小児医療、観光スポット完全網羅。">
+  <meta name="theme-color" content="#0f766e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <style>
+    :root {
+      --primary: #0f766e;
+      --primary-dark: #0f2942;
+      --primary-light: #5eead4;
+      --secondary: #c2593f;
+      --accent: #f59e0b;
+      --success: #16a34a;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(15, 41, 66, 0.08);
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "BIZ UDPGothic", "Hiragino Sans", Meiryo, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 76px; /* space for bottom nav */
+    }
+
+    /* Top Sticky Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 41, 66, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: white;
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-title {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .emergency-btn {
+      background: #dc2626;
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 2px 6px rgba(220, 38, 38, 0.4);
+    }
+
+    /* Horizontal Category Scroller */
+    .cat-scroller {
+      position: sticky;
+      top: 49px;
+      z-index: 90;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 6px;
+      padding: 8px 12px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+    .cat-scroller::-webkit-scrollbar {
+      display: none;
+    }
+    .cat-pill {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: #f1f5f9;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+    .cat-pill:hover, .cat-pill:active {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0f2942 0%, #0f766e 100%);
+      color: white;
+      padding: 24px 16px 20px;
+      border-radius: 0 0 20px 20px;
+      box-shadow: var(--shadow);
+    }
+    .hero-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--primary-light);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .hero h1 {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .hero p {
+      font-size: 12.5px;
+      color: #e2e8f0;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* Main Container */
+    main {
+      padding: 14px 16px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 24px;
+      scroll-margin-top: 100px;
+    }
+    .section-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 18px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+    .card-highlight {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+    .card-warm {
+      background: #fffbeb;
+      border-color: #fde68a;
+    }
+    .card-alert {
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+
+    /* Action Links & Buttons */
+    .btn-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-map {
+      background: #0284c7;
+      color: white;
+    }
+    .btn-call {
+      background: #dc2626;
+      color: white;
+    }
+    .btn-sub {
+      background: #f1f5f9;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    /* Image Box */
+    .img-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow);
+      background: #e2e8f0;
+    }
+    .img-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .img-card-caption {
+      background: white;
+      padding: 8px 12px;
+      font-size: 11.5px;
+      color: var(--text);
+      font-weight: 600;
+      border-top: 1px solid var(--border);
+    }
+    .img-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .img-grid-2 .img-card img {
+      height: 150px;
+    }
+
+    /* Map Box & SVG */
+    .map-container {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .map-header {
+      background: #f1f5f9;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .map-body {
+      padding: 10px;
+      background: #f8fafc;
+    }
+    .map-body svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Checkbox list */
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 12.5px;
+    }
+    .check-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 6px;
+    }
+    th, td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: #475569;
+    }
+
+    /* Bottom Sticky Nav Bar */
+    nav.bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 4px 10px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-decoration: none;
+      gap: 2px;
+      flex: 1;
+    }
+    .nav-item.active, .nav-item:hover {
+      color: var(--primary);
+    }
+    .nav-icon {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Header -->
+  <header>
+    <div class="header-title">
+      <span>🇦🇺 メルボルン家族滞在</span>
+    </div>
+    <a href="tel:000" class="emergency-btn">🚨 緊急通報 000</a>
+  </header>
+
+  <!-- Horizontal Category Scroller -->
+  <div class="cat-scroller">
+    <a href="#map" class="cat-pill">🗺️ 4段階地図</a>
+    <a href="#streetview" class="cat-pill">🏘️ 周辺街並み</a>
+    <a href="#airport" class="cat-pill">✈️ 空港アクセス</a>
+    <a href="#parks" class="cat-pill">🌳 公園・遊び場</a>
+    <a href="#zoo" class="cat-pill">🐨 動物園</a>
+    <a href="#museum" class="cat-pill">🦖 博物館・恐竜</a>
+    <a href="#beach" class="cat-pill">🏖️ 海・ペンギン</a>
+    <a href="#botanic" class="cat-pill">🌿 植物園</a>
+    <a href="#aquarium" class="cat-pill">🦈 水族館</a>
+    <a href="#library" class="cat-pill">📚 州立図書館</a>
+    <a href="#tram" class="cat-pill">🚋 トラム乗り方</a>
+    <a href="#supermarket" class="cat-pill">🛒 スーパー買い出し</a>
+    <a href="#qvm" class="cat-pill">🍎 QVM市場</a>
+    <a href="#cafe" class="cat-pill">☕ カフェ・ベビーチーノ</a>
+    <a href="#medical" class="cat-pill">🏥 救急・小児医療</a>
+    <a href="#longstay" class="cat-pill">🧺 長期滞在・洗濯</a>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-tag">Family Long Stay Guide</div>
+    <h1>小さな子どもと暮らす<br>メルボルン20日間滞在ハンドブック</h1>
+    <p>
+      滞在拠点：<strong>Flemington Road（ノース・メルボルン / パークビル境界）</strong><br>
+      目の前の大公園、動物園、空港直結高速、南半球トップの小児病院。小さな子ども連れの長期滞在に最適な生活ナビゲーション
+    </p>
+    <div class="hero-badges">
+      <span class="hero-badge">🚋 トラムStop 19直結</span>
+      <span class="hero-badge">🌳 目の前が巨大公園</span>
+      <span class="hero-badge">🏥 正面が小児病院</span>
+      <span class="hero-badge">🛒 徒歩6分にWoolworths</span>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- SECTION: EMERGENCY CONTACTS -->
+    <section id="emergency">
+      <div class="section-title">🚨 緊急連絡先＆ダイヤル</div>
+      <div class="card card-alert">
+        <div style="font-size: 13px; font-weight: 700; color: #dc2626; margin-bottom: 4px;">緊急時のワンタップ発信</div>
+        <p style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">タップするとそのまま電話発信できます。</p>
+        <div class="btn-row">
+          <a href="tel:000" class="btn btn-call">🚨 警察・救急・消防 (000)</a>
+          <a href="tel:+61393455522" class="btn btn-primary">🏥 目の前の小児病院ER</a>
+          <a href="tel:+61396794510" class="btn btn-sub">🇯🇵 日本国総領事館</a>
+          <a href="tel:131450" class="btn btn-sub">🗣️ 無料通訳 TIS (131 450)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: 4-STAGE GEOGRAPHICAL MAP -->
+    <section id="map">
+      <div class="section-title">🗺️ 位置関係まるわかり！4段階地図</div>
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">
+        オーストラリア全体から、空港・海、都心アクセス、そして徒歩生活圏まで、距離感と位置関係を完全図解。ベクター描画のため拡大しても文字がくっきり見えます。
+      </p>
+
+      <!-- STAGE 1: AUSTRALIA WIDE -->
+      <div class="map-container">
+        <div class="map-header">
+          <span>① 大陸スケール（豪州全土におけるメルボルン）</span>
+          <span style="background: var(--primary); color: white; padding: 2px 6px; border-radius: 4px; font-size: 10px;">全体像</span>
+        </div>
+        <div class="map-body">
+          <svg viewBox="0 0 300 220">
+            <path d="M 60,65 Q 75,45 110,60 Q 120,55 135,65 Q 150,50 170,35 Q 185,20 195,45 Q 205,70 220,65 Q 240,60 260,90 Q 275,115 270,140 Q 260,160 240,180 Q 230,190 210,190 Q 190,185 180,175 Q 165,180 140,175 Q 110,170 90,155 Q 60,145 45,125 Q 30,100 45,80 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2" />
+            <path d="M 205,205 Q 215,200 220,210 Q 215,220 205,215 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5" />
+            <circle cx="215" cy="60" r="3" fill="#64748b" /><text x="222" y="63" font-size="8.5" fill="#475569" font-weight="600">ケアンズ</text>
+            <circle cx="255" cy="110" r="3" fill="#64748b" /><text x="210" y="113" font-size="8.5" fill="#475569" font-weight="600">ブリスベン</text>
+            <circle cx="245" cy="155" r="3.5" fill="#64748b" /><text x="195" y="158" font-size="8.5" fill="#475569" font-weight="600">シドニー</text>
+            <circle cx="50" cy="135" r="3" fill="#64748b" /><text x="56" y="138" font-size="8.5" fill="#475569" font-weight="600">パース</text>
+            <circle cx="205" cy="183" r="7" fill="#dc2626" opacity="0.3" />
+            <circle cx="205" cy="183" r="4.5" fill="#dc2626" />
+            <line x1="205" y1="183" x2="160" y2="210" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="2,2" />
+            <rect x="70" y="200" width="105" height="18" rx="3" fill="#dc2626" />
+            <text x="75" y="213" font-size="9" fill="#ffffff" font-weight="800">★ メルボルン (滞在先)</text>
+          </svg>
+          <div style="font-size: 11.5px; color: #475569; margin-top: 6px;">
+            • 大陸南東端のビクトリア州都<br>
+            • 日本（東京）から直行便で約10時間 / 時差 +1時間（夏時間期+2時間）<br>
+            • 南半球のため季節は日本と真逆
+          </div>
+        </div>
+      </div>
+
+      <!-- STAGE 2: METRO MELBOURNE -->
+      <div class="map-container">
+        <div class="map-header">
+          <span>② 都市圏スケール（空港・海・高速CityLink）</span>
+          <span style="background: #2563eb; color: white; padding: 2px 6px; border-radius: 4px; font-size: 10px;">都市圏</span>
+        </div>
+        <div class="map-body">
+          <svg viewBox="0 0 320 220">
+            <path d="M 80,125 C 110,130 150,145 170,175 C 180,195 200,225 180,225 L 40,225 L 40,145 Z" fill="#bae6fd" stroke="#7dd3fc" stroke-width="1.5" />
+            <text x="70" y="190" font-size="9" fill="#0369a1" font-weight="700">ポート・フィリップ湾 (海)</text>
+            <path d="M 70,35 Q 110,70 145,95" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="4,2" />
+            <text x="65" y="65" font-size="7.5" fill="#b45309" font-weight="700">高速CityLink (車20分)</text>
+            <circle cx="70" cy="35" r="5" fill="#0284c7" />
+            <rect x="25" y="16" width="95" height="15" rx="3" fill="#0284c7" />
+            <text x="29" y="27" font-size="8" fill="#ffffff" font-weight="700">✈️ メルボルン空港 (MEL)</text>
+            <path d="M 280,100 Q 220,105 180,115 Q 150,120 125,130" fill="none" stroke="#38bdf8" stroke-width="2.5" />
+            <text x="220" y="98" font-size="7" fill="#0284c7">ヤラ川 (Yarra River)</text>
+            <rect x="140" y="105" width="35" height="22" rx="2" fill="#cbd5e1" stroke="#64748b" stroke-width="1" />
+            <text x="144" y="119" font-size="8" fill="#1e293b" font-weight="800">CBD中心</text>
+            <circle cx="175" cy="160" r="4" fill="#0d9488" />
+            <text x="183" y="163" font-size="8" fill="#0f766e" font-weight="700">🏖️ セント・キルダ海辺 (ペンギン)</text>
+            <circle cx="145" cy="93" r="8" fill="#dc2626" opacity="0.3" />
+            <circle cx="145" cy="93" r="5" fill="#dc2626" />
+            <rect x="155" y="80" width="130" height="20" rx="3" fill="#dc2626" />
+            <text x="160" y="94" font-size="8.5" fill="#ffffff" font-weight="800">★ 宿泊先 (高速出口の直前)</text>
+          </svg>
+          <div style="font-size: 11.5px; color: #475569; margin-top: 6px;">
+            • 空港から高速CityLinkで一直線（混雑するCBDを通らず直着20分）<br>
+            • 宿泊先はCBDの北側。南へ下れば海（セントキルダ）へもトラム1本
+          </div>
+        </div>
+      </div>
+
+      <!-- STAGE 3: RADIAL ATTRACTIONS MAP -->
+      <div class="map-container">
+        <div class="map-header">
+          <span>③ 主要スポットとの距離感（宿泊先からの所要時間マップ）</span>
+          <span style="background: #c2593f; color: white; padding: 2px 6px; border-radius: 4px; font-size: 10px;">アクセス</span>
+        </div>
+        <div class="map-body">
+          <svg viewBox="0 0 620 175">
+            <circle cx="310" cy="80" r="42" fill="none" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3,3" />
+            <circle cx="310" cy="80" r="90" fill="none" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3,3" />
+            <text x="315" y="36" font-size="7" fill="#94a3b8">半径 1km</text>
+            <text x="315" y="6" font-size="7" fill="#94a3b8">半径 2km</text>
+            <circle cx="310" cy="80" r="13" fill="#dc2626" />
+            <text x="310" y="77" font-size="8.5" fill="#ffffff" font-weight="800" text-anchor="middle">★ 宿泊先</text>
+            <text x="310" y="88" font-size="6.5" fill="#fef2f2" text-anchor="middle">Flemington Rd</text>
+            <line x1="310" y1="67" x2="310" y2="23" stroke="#0f766e" stroke-width="2" />
+            <rect x="250" y="5" width="120" height="18" rx="3" fill="#0f766e" />
+            <text x="310" y="17" font-size="8" fill="#ffffff" font-weight="700" text-anchor="middle">🐨 メルボルン動物園 【トラム5分】</text>
+            <line x1="300" y1="70" x2="210" y2="38" stroke="#16a34a" stroke-width="2" />
+            <rect x="135" y="26" width="130" height="18" rx="3" fill="#16a34a" />
+            <text x="200" y="38" font-size="8" fill="#ffffff" font-weight="700" text-anchor="middle">🌳 ロイヤルパーク遊び場 【徒歩2分】</text>
+            <line x1="323" y1="75" x2="400" y2="58" stroke="#e11d48" stroke-width="2" />
+            <rect x="400" y="48" width="125" height="18" rx="3" fill="#e11d48" />
+            <text x="462" y="60" font-size="8" fill="#ffffff" font-weight="700" text-anchor="middle">🏥 小児総合病院 RCH 【目の前1分】</text>
+            <line x1="323" y1="85" x2="440" y2="100" stroke="#7c3aed" stroke-width="2" />
+            <rect x="440" y="90" width="145" height="18" rx="3" fill="#7c3aed" />
+            <text x="512" y="102" font-size="8" fill="#ffffff" font-weight="700" text-anchor="middle">🦖 博物館＆恐竜・庭園 【トラム10分】</text>
+            <line x1="318" y1="90" x2="390" y2="135" stroke="#ea580c" stroke-width="2" />
+            <rect x="375" y="135" width="150" height="18" rx="3" fill="#ea580c" />
+            <text x="450" y="147" font-size="8" fill="#ffffff" font-weight="700" text-anchor="middle">🍎 クイーンヴィクトリア市場 【トラム5分】</text>
+            <line x1="310" y1="93" x2="310" y2="140" stroke="#0284c7" stroke-width="2" />
+            <rect x="235" y="140" width="150" height="18" rx="3" fill="#0284c7" />
+            <text x="310" y="152" font-size="8" fill="#ffffff" font-weight="700" text-anchor="middle">🏛️ 州立図書館 / CBD中心 【トラム10分】</text>
+            <line x1="300" y1="90" x2="190" y2="135" stroke="#0284c7" stroke-width="2" />
+            <rect x="105" y="135" width="155" height="18" rx="3" fill="#0284c7" />
+            <text x="182" y="147" font-size="8" fill="#ffffff" font-weight="700" text-anchor="middle">🐧 水族館＆サウスバンク 【トラム15分】</text>
+            <line x1="297" y1="80" x2="200" y2="80" stroke="#15803d" stroke-width="2" />
+            <rect x="105" y="70" width="140" height="18" rx="3" fill="#15803d" />
+            <text x="175" y="82" font-size="8" fill="#ffffff" font-weight="700" text-anchor="middle">🛒 スーパーWoolworths 【徒歩6分】</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- STAGE 4: LOCAL WALKING STREET MAP -->
+      <div class="map-container">
+        <div class="map-header">
+          <span>④ 宿泊先 至近生活圏マップ（徒歩5分〜10分圏内）</span>
+          <span style="background: #15803d; color: white; padding: 2px 6px; border-radius: 4px; font-size: 10px;">生活圏</span>
+        </div>
+        <div class="map-body">
+          <svg viewBox="0 0 620 135">
+            <line x1="50" y1="120" x2="550" y2="20" stroke="#cbd5e1" stroke-width="22" stroke-linecap="round" />
+            <line x1="50" y1="120" x2="550" y2="20" stroke="#f1f5f9" stroke-width="18" stroke-linecap="round" />
+            <line x1="50" y1="120" x2="550" y2="20" stroke="#10b981" stroke-width="2" stroke-dasharray="4,3" />
+            <text x="440" y="27" font-size="8.5" fill="#475569" font-weight="700">Flemington Road (幹線道路・トラム軌道)</text>
+            <line x1="250" y1="75" x2="160" y2="128" stroke="#cbd5e1" stroke-width="13" stroke-linecap="round" />
+            <text x="145" y="108" font-size="7.5" fill="#64748b" transform="rotate(-30, 145, 108)">Melrose St</text>
+            <rect x="230" y="3" width="220" height="26" rx="4" fill="#dcfce7" stroke="#86efac" stroke-width="1" />
+            <text x="340" y="19" font-size="8.5" fill="#15803d" font-weight="800" text-anchor="middle">🌳 ロイヤルパーク (Nature Play 水遊び場)</text>
+            <rect x="460" y="40" width="145" height="32" rx="4" fill="#ffe4e6" stroke="#f43f5e" stroke-width="1" />
+            <text x="532" y="54" font-size="8" fill="#be123c" font-weight="800" text-anchor="middle">🏥 小児病院 (RCH)</text>
+            <text x="532" y="65" font-size="7" fill="#881337" text-anchor="middle">正面アトリウム水槽・救急</text>
+            <rect x="315" y="50" width="65" height="17" rx="3" fill="#0f766e" />
+            <text x="347" y="62" font-size="7.5" fill="#ffffff" font-weight="700" text-anchor="middle">🚊 Stop 19</text>
+            <circle cx="280" cy="80" r="9" fill="#dc2626" />
+            <polygon points="280,73 283,79 289,79 284,83 286,89 280,85 274,89 276,83 271,79 277,79" fill="#ffffff" />
+            <rect x="270" y="93" width="85" height="17" rx="3" fill="#dc2626" />
+            <text x="312" y="105" font-size="8" fill="#ffffff" font-weight="800" text-anchor="middle">★ ご宿泊先</text>
+            <rect x="70" y="102" width="130" height="28" rx="4" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5" />
+            <text x="135" y="114" font-size="8" fill="#15803d" font-weight="800" text-anchor="middle">🛒 Woolworths (徒歩6分)</text>
+            <text x="135" y="124" font-size="7" fill="#166534" text-anchor="middle">無料フルーツ・食材・おむつ</text>
+            <rect x="370" y="102" width="150" height="28" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5" />
+            <text x="445" y="114" font-size="8" fill="#b45309" font-weight="800" text-anchor="middle">☕ Errol St カフェ街 (徒歩10分)</text>
+            <text x="445" y="124" font-size="7" fill="#92400e" text-anchor="middle">Auction Rooms / ベビーチーノ</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- User Uploaded Map -->
+      <div class="img-card">
+        <img src="images/user_map.jpg" alt="宿泊先周辺マップ">
+        <div class="img-card-caption">📍 Google Maps 宿泊先周辺詳細図（Flemington Rd / RCH南側）</div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: STREET VIEW -->
+    <section id="streetview">
+      <div class="section-title">🏘️ 宿泊先周辺ストリートビュー・街並み</div>
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">
+        宿泊先の目の前の実際の街並みです。歩道が広く段差のないフラットな歩道が整備され、ベビーカー連れでも安心です。
+      </p>
+
+      <div class="img-grid-2">
+        <div class="img-card">
+          <img src="images/street_melrose.jpg" alt="Melrose St交差点">
+          <div class="img-card-caption">Flemington Rd と Melrose St 角（スーパーへの曲がり角）</div>
+        </div>
+        <div class="img-card">
+          <img src="images/street_flemington.jpg" alt="Flemington Road大通り">
+          <div class="img-card-caption">Flemington Road（中央にトラム軌道、両側に並木道）</div>
+        </div>
+      </div>
+
+      <div class="img-grid-2">
+        <div class="img-card">
+          <img src="images/street_rmh.jpg" alt="東側並木道">
+          <div class="img-card-caption">東側・病院前通り（緑豊かな街路樹とフラットな歩道）</div>
+        </div>
+        <div class="img-card">
+          <img src="images/street_terrace.jpg" alt="ノースメルボルンのテラスハウス">
+          <div class="img-card-caption">住宅街（ノースメルボルンの歴史あるビクトリア調家並み）</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: AIRPORT ACCESS -->
+    <section id="airport">
+      <div class="section-title">✈️ 空港アクセス＆子連れ移動ガイド</div>
+      <div class="img-card">
+        <img src="images/melbourne_airport.jpg" alt="メルボルン空港">
+        <div class="img-card-caption">メルボルン空港（MEL / タラマリン空港）</div>
+      </div>
+
+      <div class="card card-highlight">
+        <div style="font-size: 13.5px; font-weight: 700; color: #166534; margin-bottom: 4px;">🚕 空港から車でわずか20分！高速直結の絶好ロケーション</div>
+        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 8px;">
+          空港と都心を結ぶ有料高速「CityLink」は、ちょうど宿泊先の目の前（Flemington Road出口）が都心側の終点。混雑するCBD市街地を一切通過せず、空港からノンストップ約20分（運賃約$55〜$70）で宿の玄関前に到着できます！
+        </p>
+        <div style="font-size: 11.5px; color: #334155; line-height: 1.5;">
+          • <strong>タクシーのチャイルドシート規則:</strong> ビクトリア州法では、正規タクシーはチャイルドシート義務が免除されており、後部座席で大人が抱っこまたはシートベルト着用で合法的に乗車可能です。<br>
+          • <strong>Uberの場合:</strong> アプリで「Uber Car Seat」を選択するか、空港のタクシー乗り場から通常のイエローキャブを利用するのが確実です。
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">🚌 SkyBus（空港直行バス）を使う場合</div>
+        <p style="font-size: 12px; color: #475569;">
+          空港からサザンクロス駅までSkyBus（大人片道約$24、子ども無料/割引）。サザンクロス駅からタクシー（約10分・$15程度）に乗り換えて宿泊先へ向かうのがスムーズです。
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ROYAL PARK & NATURE PLAY -->
+    <section id="parks">
+      <div class="section-title">🌳 正面！Royal Park & Nature Play遊び場</div>
+      <div class="img-grid-2">
+        <div class="img-card">
+          <img src="images/royal_park.jpg" alt="ロイヤルパーク">
+          <div class="img-card-caption">広大なユーカリの林と芝生広場</div>
+        </div>
+        <div class="img-card">
+          <img src="images/playground_fun.jpg" alt="Nature Play遊具">
+          <div class="img-card-caption">全豪ベスト遊び場賞の本格遊具</div>
+        </div>
+      </div>
+
+      <div class="card card-highlight">
+        <div style="font-size: 13.5px; font-weight: 700; color: #166534; margin-bottom: 4px;">🌊 子どもが夢中になる4つの遊びゾーン</div>
+        <p style="font-size: 12px; margin-bottom: 8px;">
+          宿泊先から道路を渡って徒歩2分。オーストラリアのランドスケープ賞を受賞した最高峰の遊び場です。
+        </p>
+        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6;">
+          <li><strong>💧 水遊びゾーン（Water Play）:</strong> 手押しポンプから水が流れ、砂場で泥遊びやダム作り。※着替え・タオル必携！</li>
+          <li><strong>🧗 岩登り＆ロープネット:</strong> 自然石やネットをよじ登る冒険アスレチック。</li>
+          <li><strong>🛝 丘のロングすべり台:</strong> 丘の斜面を利用した迫力の長いすべり台。</li>
+          <li><strong>🦜 野生のオウム観察:</strong> ピンク色のモモイロインコや白いキバタンが芝生に降りてきます。</li>
+        </ul>
+        <div class="btn-row">
+          <a href="https://maps.google.com/?q=Royal+Park+Nature+Play+Melbourne" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: MELBOURNE ZOO -->
+    <section id="zoo">
+      <div class="section-title">🐨 トラム直通5分！Melbourne Zoo（動物園）</div>
+      <div class="img-grid-2">
+        <div class="img-card">
+          <img src="images/koala.jpg" alt="コアラ">
+          <div class="img-card-caption">コアラ（目線の高さで間近に観察）</div>
+        </div>
+        <div class="img-card">
+          <img src="images/kangaroo_joey.jpg" alt="カンガルーの親子">
+          <div class="img-card-caption">カンガルー（柵のない同じ空間を歩ける）</div>
+        </div>
+      </div>
+
+      <div class="card card-highlight">
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">子どもが大興奮する見どころ</div>
+        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6;">
+          <li><strong>🦘 カンガルーウォークスルー:</strong> 柵がなく、くつろぐカンガルーの横を歩くスリル！</li>
+          <li><strong>🐨 コアラツリートップウォーク:</strong> ユーカリの木の枝と同じ高さのデッキから観察。</li>
+          <li><strong>🧑‍⚕️ Keeper Kids:</strong> 獣医や飼育員の制服を着てごっこ遊びができる室内プレイスペース（雨の日も◎）。</li>
+          <li><strong>🎟️ 子ども無料:</strong> 土日・祝日・スクールホリデーは子ども（4〜15歳）入場無料！</li>
+        </ul>
+        <div class="btn-row">
+          <a href="https://maps.google.com/?q=Melbourne+Zoo" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: MELBOURNE MUSEUM -->
+    <section id="museum">
+      <div class="section-title">🦖 Melbourne Museum & 恐竜・子ども庭園</div>
+      <div class="img-grid-2">
+        <div class="img-card">
+          <img src="images/dinosaur.jpg" alt="恐竜骨格標本">
+          <div class="img-card-caption">実物大恐竜の化石がズラリ</div>
+        </div>
+        <div class="img-card">
+          <img src="images/carlton_gardens.jpg" alt="木製遊具">
+          <div class="img-card-caption">Carlton Gardens お城の木製遊具</div>
+        </div>
+      </div>
+
+      <div class="card card-highlight">
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">未就学児専用ギャラリー＆屋外遊具</div>
+        <p style="font-size: 12px; margin-bottom: 6px;">
+          南半球最大の博物館。<strong>16歳以下はいつでも入場無料！</strong>
+        </p>
+        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6;">
+          <li><strong>👶 Pauline Gandel Children's Gallery:</strong> 靴を脱いで遊べる未就学児専用エリア。砂場で恐竜の骨掘り、ダンスフロア、カメレオントンネル。</li>
+          <li><strong>🏰 Carlton Gardens Playground:</strong> 博物館すぐ横にある巨大な木製お城アスレチック。</li>
+        </ul>
+        <div class="btn-row">
+          <a href="https://maps.google.com/?q=Melbourne+Museum" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: ST KILDA BEACH -->
+    <section id="beach">
+      <div class="section-title">🏖️ 海辺へ！St Kilda Beach & ルナパーク</div>
+      <div class="img-grid-2">
+        <div class="img-card">
+          <img src="images/st_kilda.jpg" alt="セントキルダ桟橋">
+          <div class="img-card-caption">St Kilda Pier（野生ペンギンの岩場）</div>
+        </div>
+        <div class="img-card">
+          <img src="images/luna_park.jpg" alt="ルナパークの顔">
+          <div class="img-caption" style="padding: 4px 8px; font-size: 11px; background: white; font-weight: 600;">Luna Park（歴史ある遊園地ゲート）</div>
+        </div>
+      </div>
+
+      <div class="card card-highlight">
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">🐧 夕暮れの野生フェアリーペンギン無料観察</div>
+        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+          セントキルダ桟橋の先端にある防波堤では、日没時に海から上がってくる世界最小のフェアリーペンギンを無料で見学できます（フラッシュ撮影禁止）。
+        </p>
+        <p style="font-size: 11.5px; color: #475569;">
+          レトロな「ルナ・パーク」のメリーゴーラウンドや、Acland Stの美味しいケーキ屋・ジェラート屋散策も楽しめます。
+        </p>
+        <div class="btn-row">
+          <a href="https://maps.google.com/?q=St+Kilda+Pier" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: BOTANIC GARDENS -->
+    <section id="botanic">
+      <div class="section-title">🌿 王立植物園 & 子ども庭園</div>
+      <div class="img-card">
+        <img src="images/botanic_lake.jpg" alt="王立植物園の湖">
+        <div class="img-card-caption">Ornamental Lake（黒鳥が泳ぐ美しい湖・入園無料）</div>
+      </div>
+
+      <div class="card card-highlight">
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">💧 Ian Potter Children's Garden（子ども庭園）</div>
+        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+          植物園内にある子ども専用の安全な遊びの庭園。小川での水遊び、竹林迷路、秘密のツリーハウスがあり、芝生ピクニックに最適です。
+        </p>
+        <div class="btn-row">
+          <a href="https://maps.google.com/?q=Ian+Potter+Foundation+Children%27s+Garden" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: AQUARIUM & SOUTHBANK -->
+    <section id="aquarium">
+      <div class="section-title">🦈 シーライフ水族館 & サウスバンク</div>
+      <div class="img-card">
+        <img src="images/aquarium_penguin.jpg" alt="キングペンギンのペスト">
+        <div class="img-card-caption">SEA LIFEのキングペンギン（話題の巨大ヒナ Pesto）</div>
+      </div>
+
+      <div class="card card-highlight">
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">トラム58番で直通15分！屋内アクアリウム</div>
+        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+          頭上をサメやエイが通り過ぎる海底トンネル、南極のペンギン、5m超の巨大ワニ。ヤラ川沿いのサウスバンク遊歩道は段差がなくベビーカー散歩に最適。
+        </p>
+        <div class="btn-row">
+          <a href="https://maps.google.com/?q=SEA+LIFE+Melbourne+Aquarium" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: STATE LIBRARY -->
+    <section id="library">
+      <div class="section-title">📚 ビクトリア州立図書館 & 子どもフロア</div>
+      <div class="img-card">
+        <img src="images/state_library.jpg" alt="ビクトリア州立図書館ドーム">
+        <div class="img-card-caption">八角形の壮大なドーム閲覧室（入館無料・トラム10分）</div>
+      </div>
+
+      <div class="card card-highlight">
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">🏰 無料の子どもフロア「Children's Quarter」</div>
+        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+          2階建てのお城型本棚、大型ソフトブロック、絵本コーナー、靴を脱いでくつろげるクッションフロア。冷暖房完備で、雨の日や暑い日の休憩に最高の穴場です。
+        </p>
+        <div class="btn-row">
+          <a href="https://maps.google.com/?q=State+Library+Victoria" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 11: TRAM -->
+    <section id="tram">
+      <div class="section-title">🚋 子連れトラム移動術＆ルール</div>
+      <div class="img-grid-2">
+        <div class="img-card">
+          <img src="images/tram.jpg" alt="C-Classトラム">
+          <div class="img-card-caption">C-Class 低床トラム（段差なし乗車）</div>
+        </div>
+        <div class="img-card">
+          <img src="images/tram_eclass.jpg" alt="E-Class大型トラム">
+          <div class="img-card-caption">E-Class 大型トラム（ベビーカー優先席）</div>
+        </div>
+      </div>
+
+      <div class="card card-highlight">
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">運賃ルール＆ベビーカー乗車のコツ</div>
+        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6;">
+          <li><strong>4歳以下:</strong> 運賃は**完全無料**（カード不要）。</li>
+          <li><strong>5歳以上:</strong> 「Child myki」で大人の半額（1日上限約$5.30、土日は約$1.80）。</li>
+          <li><strong>ベビーカー乗車:</strong> 低床トラム（Low-Floor Tram）はたたまずそのまま乗車可能。ドア付近の優先スペースでブレーキをロック。</li>
+          <li><strong>⚠️ Stop 19での注意:</strong> 宿泊先のStop 19は無料トラムゾーン（Free Tram Zone）の外側です。乗車時に車内のリーダーに必ずタッチオン（Touch On）してください。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 12: SUPERMARKET -->
+    <section id="supermarket">
+      <div class="section-title">🛒 スーパー買い出し術（Woolworths & ALDI）</div>
+      <div class="img-grid-2">
+        <div class="img-card">
+          <img src="images/supermarket_aisle.jpg" alt="スーパー店内">
+          <div class="img-card-caption">広々とした通路でベビーカーも快適</div>
+        </div>
+        <div class="img-card">
+          <img src="images/fresh_fruit.jpg" alt="果物売り場">
+          <div class="img-card-caption">新鮮なイチゴ、バナナ、リンゴ</div>
+        </div>
+      </div>
+
+      <div class="card card-highlight">
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">🍎 名物「Free Fruit for Kids（子ども用無料フルーツ）」</div>
+        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+          徒歩6分のWoolworths青果コーナー入口には、子どもが自由に食べて良いバナナやりんごのカゴが置いてあります。買い物中のぐずり対策に最高です。
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">おすすめ現地キッズおやつ＆調達先</div>
+        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6;">
+          <li><strong>パウチヨーグルト（Pauls / Chobani Kids）:</strong> スプーン不要で吸えるパウチ型。</li>
+          <li><strong>Tiny Teddy ビスケット:</strong> 可愛い小熊型クッキー。</li>
+          <li><strong>おむつ（Nappies）:</strong> HuggiesやBabyLoveがWoolworthsで調達可能。おしりふきは「Wipes」。</li>
+        </ul>
+        <div class="btn-row">
+          <a href="https://maps.google.com/?q=Woolworths+North+Melbourne" target="_blank" class="btn btn-map">📍 Woolworths (徒歩6分) を開く</a>
+          <a href="https://maps.google.com/?q=ALDI+North+Melbourne" target="_blank" class="btn btn-map">📍 ALDI (徒歩10分) を開く</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 13: QUEEN VICTORIA MARKET -->
+    <section id="qvm">
+      <div class="section-title">🍎 クイーン・ヴィクトリア・マーケット散策</div>
+      <div class="img-grid-2">
+        <div class="img-card">
+          <img src="images/qvm_street.jpg" alt="QVM入口">
+          <div class="img-card-caption">南半球最大の歴史ある市場</div>
+        </div>
+        <div class="img-card">
+          <img src="images/donuts.jpg" alt="ジャムドーナツ">
+          <div class="img-card-caption">名物！熱々ジャムドーナツ</div>
+        </div>
+      </div>
+
+      <div class="card card-highlight">
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">トラム59番で約5分！食育と食べ歩き</div>
+        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+          アメリカン・ドーナツ・キッチンの揚げたてジャムドーナツ、新鮮なイチゴやブドウの味見、コアラやカンガルーのぬいぐるみ、デリホールでのクロワッサンランチ。
+        </p>
+        <p style="font-size: 11.5px; color: #dc2626; font-weight: 600;">
+          ※ 月曜・水曜は休場（火・木・金・土・日営業）。
+        </p>
+        <div class="btn-row">
+          <a href="https://maps.google.com/?q=Queen+Victoria+Market" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 14: CAFE & BABYCCINO -->
+    <section id="cafe">
+      <div class="section-title">☕ 親子カフェタイム＆外食ガイド</div>
+      <div class="img-grid-2">
+        <div class="img-card">
+          <img src="images/babyccino_real.jpg" alt="ベビーチーノ">
+          <div class="img-card-caption">Babyccino（ふわふわ泡＋マシュマロ）</div>
+        </div>
+        <div class="img-card">
+          <img src="images/coffee.jpg" alt="フラットホワイト">
+          <div class="img-card-caption">大人は極上のFlat Whiteで乾杯</div>
+        </div>
+      </div>
+
+      <div class="card card-highlight">
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">オーストラリアの魔法「Babyccino（ベビーチーノ）」</div>
+        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+          温かいスチームミルクの泡にココアパウダーを振り、マシュマロを添えたキッズ専用ドリンク（無料〜$2程度）。親のコーヒーと一緒に「Can I get a Flat White and a Babyccino, please?」と頼めば、パパ・ママと同じカップで大人気分を味わえます。
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">近隣のおすすめカフェ</div>
+        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+          <strong>Auction Rooms Cafe (徒歩10分):</strong> 元競売場を改装した開放的な店内はベビーカーも楽々。中庭テラスあり。<br>
+          <strong>RCH小児病院内カフェ (徒歩1分):</strong> 巨大水槽を見ながらテイクアウトしたコーヒーをベンチで。
+        </p>
+        <div class="btn-row">
+          <a href="https://maps.google.com/?q=Auction+Rooms+Cafe+North+Melbourne" target="_blank" class="btn btn-map">📍 Auction Rooms を開く</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 15: MEDICAL & HOSPITAL -->
+    <section id="medical">
+      <div class="section-title">🏥 小児医療・緊急サポート体制</div>
+      <div class="img-grid-2">
+        <div class="img-card">
+          <img src="images/rch_atrium.jpg" alt="病院アトリウム">
+          <div class="img-card-caption">小児病院アトリウム（巨大水槽＆ミーアキャット）</div>
+        </div>
+        <div class="img-card">
+          <img src="images/rch.jpg" alt="小児病院外観">
+          <div class="img-card-caption">The Royal Children's Hospital 外観（徒歩1分）</div>
+        </div>
+      </div>
+
+      <div class="card card-alert">
+        <div style="font-size: 13px; font-weight: 700; color: #b91c1c; margin-bottom: 4px;">南半球最高峰の小児救急（ER）が目の前！</div>
+        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+          夜間の急な発熱、嘔吐、ケガの際は、宿泊先正面の「The Royal Children's Hospital Emergency」へ徒歩1分で駆け込めます。24時間対応。
+        </p>
+        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6; color: #475569;">
+          <li><strong>持参物:</strong> お子様と保護者のパスポート、海外旅行保険証。</li>
+          <li><strong>通訳:</strong> 医療通訳を無料で手配してもらえます（「We need a Japanese interpreter」）。</li>
+          <li><strong>常備薬:</strong> 薬局で「Children's Panadol（アセトアミノフェン解熱シロップ）」が処方箋なしで購入可。</li>
+        </ul>
+        <div class="btn-row">
+          <a href="tel:+61393455522" class="btn btn-call">📞 小児病院ERに電話</a>
+          <a href="https://maps.google.com/?q=The+Royal+Children%27s+Hospital+Melbourne" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
+        </div>
+      </div>
+
+      <div class="card card-highlight">
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">🐠 病院1階の巨大水槽＆本物のミーアキャット！</div>
+        <p style="font-size: 12px; line-height: 1.55;">
+          病院の1階エントランスは自由に出入りでき、サンゴ礁の巨大円柱水槽や本物のミーアキャット飼育ケージがあります。ちょっとしたお散歩や雨の日の癒やしスポットとしても最高です。
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 16: LONG STAY & PACKING -->
+    <section id="longstay">
+      <div class="section-title">🧺 20日間長期滞在の生活術＆チェックリスト</div>
+      <div class="img-card">
+        <img src="images/laundromat.jpg" alt="コインランドリー">
+        <div class="img-card-caption">近隣のLaundromat（約45分で洗濯・乾燥完了）</div>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">生活術のポイント</div>
+        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6;">
+          <li><strong>洗濯（Laundromat）:</strong> 宿に洗濯機がない場合や大量のシーツ・服をまとめ洗いしたい時は近隣のコインランドリーへ。</li>
+          <li><strong>衣料・日用品の激安調達:</strong> 子どもの着替え、サンダル、おもちゃの買い足しは「Kmart」や「Big W」が激安でおすすめ。</li>
+          <li><strong>紫外線対策（SunSmart）:</strong> オーストラリアの紫外線は強力。現地スーパーで「Cancer Council Kids」の日焼け止めと帽子を常用してください。</li>
+          <li><strong>気候対策:</strong> 「1日に四季がある」ため、夏でも夕方に15℃近くまで冷え込むことがあります。薄手の羽織る上着を常に携帯しましょう。</li>
+        </ul>
+      </div>
+
+      <div class="card card-warm">
+        <div style="font-size: 13px; font-weight: 700; color: #b45309; margin-bottom: 8px;">✅ お出かけ持ち物チェックリスト（タップでチェック）</div>
+        <div id="checklist">
+          <label class="check-item"><input type="checkbox"> 水筒（公園や駅で無料給水可能）</label>
+          <label class="check-item"><input type="checkbox"> 着替え1組＆ミニタオル（水遊び・泥用）</label>
+          <label class="check-item"><input type="checkbox"> ウェットティッシュ（食事・おやつ用）</label>
+          <label class="check-item"><input type="checkbox"> 小分けおやつ（Tiny Teddyやフルーツ）</label>
+          <label class="check-item"><input type="checkbox"> 羽織れる上着（急な冷え込み・冷房対策）</label>
+          <label class="check-item"><input type="checkbox"> 日焼け止め＆つば広帽子</label>
+          <label class="check-item"><input type="checkbox"> mykiカード（またはスマホGoogle Wallet）</label>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Sticky Nav Bar -->
+  <nav class="bottom-nav">
+    <a href="#map" class="nav-item">
+      <span class="nav-icon">🗺️</span>
+      <span>地図</span>
+    </a>
+    <a href="#tram" class="nav-item">
+      <span class="nav-icon">🚋</span>
+      <span>トラム</span>
+    </a>
+    <a href="#supermarket" class="nav-item">
+      <span class="nav-icon">🛒</span>
+      <span>買物</span>
+    </a>
+    <a href="#parks" class="nav-item">
+      <span class="nav-icon">🌳</span>
+      <span>遊び場</span>
+    </a>
+    <a href="#medical" class="nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>小児医療</span>
+    </a>
+  </nav>
+
+  <script>
+    // Checklist state persistence via localStorage
+    const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"]');
+    checkboxes.forEach((cb, index) => {
+      const saved = localStorage.getItem('trip_checklist_' + index);
+      if (saved === 'true') cb.checked = true;
+      cb.addEventListener('change', () => {
+        localStorage.setItem('trip_checklist_' + index, cb.checked);
+      });
+    });
+  </script>
+</body>
+</html>
