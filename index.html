@@ -3,28 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <title>メルボルン家族滞在のしおり | 20-Day Melbourne Family Guide</title>
-  <meta name="description" content="小さな子どもと暮らすメルボルン20日間滞在の生活ガイド。ノース・メルボルン／パークビル周辺の遊び場、交通、スーパー、カフェ、小児医療、観光スポット完全網羅。">
-  <meta name="theme-color" content="#0f766e">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
+  <title>小さな子どもと暮らす メルボルン20日間滞在ハンドブック（サウス・ヤラ編）</title>
   <style>
     :root {
-      --primary: #0f766e;
-      --primary-dark: #0f2942;
-      --primary-light: #5eead4;
-      --secondary: #c2593f;
+      --primary: #1d4ed8;
+      --primary-dark: #1e3a8a;
+      --primary-light: #eff6ff;
       --accent: #f59e0b;
-      --success: #16a34a;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --text: #1e293b;
+      --accent-green: #10b981;
+      --text-main: #1e293b;
       --text-muted: #64748b;
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
       --border: #e2e8f0;
-      --radius: 12px;
-      --shadow: 0 4px 14px rgba(15, 41, 66, 0.08);
-      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "BIZ UDPGothic", "Hiragino Sans", Meiryo, sans-serif;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
     }
 
     * {
@@ -35,11 +29,11 @@
     }
 
     body {
-      font-family: var(--font);
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding-bottom: 78px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 74px; /* Space for bottom nav */
     }
 
     /* Top Sticky Header */
@@ -47,36 +41,41 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(15, 41, 66, 0.96);
+      background: rgba(15, 23, 42, 0.96);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      color: white;
-      padding: 10px 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      padding: 12px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .header-title {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      font-size: 15px;
+      font-weight: 800;
       display: flex;
       align-items: center;
       gap: 6px;
+      letter-spacing: -0.3px;
     }
     .emergency-btn {
       background: #dc2626;
-      color: white;
-      text-decoration: none;
-      padding: 5px 11px;
-      border-radius: 20px;
+      color: #ffffff;
       font-size: 11px;
       font-weight: 700;
+      padding: 6px 11px;
+      border-radius: 20px;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 4px;
       box-shadow: 0 2px 6px rgba(220, 38, 38, 0.4);
+      animation: pulse-red 2s infinite;
+    }
+    @keyframes pulse-red {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
     }
 
     /* Horizontal Category Scroller */
@@ -87,11 +86,13 @@
       background: #ffffff;
       border-bottom: 1px solid var(--border);
       display: flex;
-      gap: 6px;
-      padding: 8px 12px;
       overflow-x: auto;
       white-space: nowrap;
+      padding: 8px 12px;
+      gap: 8px;
       scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
     .cat-scroller::-webkit-scrollbar {
       display: none;
@@ -99,374 +100,68 @@
     .cat-pill {
       font-size: 12px;
       font-weight: 600;
-      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 16px;
       background: #f1f5f9;
-      padding: 6px 14px;
-      border-radius: 20px;
+      color: #475569;
       text-decoration: none;
-      display: inline-block;
-      transition: all 0.2s;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.15s ease;
     }
     .cat-pill:hover, .cat-pill:active {
-      background: var(--primary);
-      color: white;
+      background: #e2e8f0;
+      color: var(--primary);
     }
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #0f2942 0%, #0f766e 100%);
-      color: white;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1e40af 100%);
+      color: #ffffff;
       padding: 24px 16px 20px;
-      border-radius: 0 0 20px 20px;
-      box-shadow: var(--shadow);
+      text-align: left;
     }
     .hero-tag {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--primary-light);
+      display: inline-block;
+      font-size: 10px;
       font-weight: 700;
-      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
     }
     .hero h1 {
-      font-size: 21px;
+      font-size: 20px;
+      line-height: 1.35;
       font-weight: 800;
-      line-height: 1.3;
       margin-bottom: 8px;
     }
     .hero p {
       font-size: 12.5px;
-      color: #e2e8f0;
-      line-height: 1.5;
-      margin-bottom: 14px;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 12px;
     }
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
+      margin-bottom: 4px;
     }
     .hero-badge {
+      font-size: 10.5px;
+      font-weight: 600;
       background: rgba(255, 255, 255, 0.15);
       border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 6px;
       padding: 4px 8px;
-      font-size: 11px;
-      font-weight: 600;
-    }
-
-    /* Main Container */
-    main {
-      padding: 14px 14px;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    /* Sections */
-    section {
-      margin-bottom: 24px;
-      scroll-margin-top: 100px;
-    }
-    .section-title {
-      font-size: 17px;
-      font-weight: 800;
-      color: var(--primary-dark);
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .section-title::before {
-      content: "";
-      width: 4px;
-      height: 18px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
-
-    /* Cards */
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 14px;
-      margin-bottom: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
-    .card-highlight {
-      background: #f0fdf4;
-      border-color: #bbf7d0;
-    }
-    .card-warm {
-      background: #fffbeb;
-      border-color: #fde68a;
-    }
-    .card-alert {
-      background: #fef2f2;
-      border-color: #fecaca;
-    }
-
-    /* Action Links & Buttons */
-    .btn-row {
-      display: flex;
-      gap: 8px;
-      margin-top: 10px;
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 12px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
-    .btn-map {
-      background: #0284c7;
-      color: white;
-    }
-    .btn-call {
-      background: #dc2626;
-      color: white;
-    }
-    .btn-sub {
-      background: #f1f5f9;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    /* ===================================================
-       UPGRADED 4-STAGE INTERACTIVE MAP COMPONENT
-    =================================================== */
-    .stage-map-widget {
-      background: #ffffff;
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      margin-bottom: 14px;
-    }
-    /* Segmented Control Tabs */
-    .map-tabs {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      background: #f1f5f9;
-      border-bottom: 1.5px solid var(--border);
-      padding: 4px;
-      gap: 4px;
-    }
-    .map-tab-btn {
-      background: transparent;
-      border: none;
-      padding: 8px 4px;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--text-muted);
-      border-radius: 8px;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-      transition: all 0.2s;
-    }
-    .map-tab-btn span.tab-icon {
-      font-size: 16px;
-    }
-    .map-tab-btn.active {
-      background: #ffffff;
-      color: var(--primary-dark);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    /* Map Display Viewport */
-    .map-viewport {
-      position: relative;
-      background: #f8fafc;
-      width: 100%;
-      min-height: 280px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px;
-      overflow: hidden;
-    }
-    .map-panel {
-      display: none;
-      width: 100%;
-      animation: fadeIn 0.25s ease-in-out;
-    }
-    .map-panel.active {
-      display: block;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.98); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    .map-svg-wrap {
-      width: 100%;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.06));
-    }
-    .map-svg-wrap svg {
-      width: 100%;
-      height: auto;
-      max-height: 340px;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* Map Bottom Info Card */
-    .map-info-card {
-      padding: 12px 14px;
-      background: #ffffff;
-      border-top: 1px solid var(--border);
-    }
-    .map-info-title {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--primary-dark);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-    }
-    .map-info-desc {
-      font-size: 11.5px;
-      color: #475569;
-      line-height: 1.5;
-    }
-
-    /* Map Step Navigation Controls */
-    .map-step-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #f8fafc;
-      border-top: 1px solid var(--border);
-      padding: 8px 12px;
-    }
-    .map-nav-arrow {
-      background: #ffffff;
-      border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 6px 12px;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--primary-dark);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .map-nav-arrow:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
-    .map-zoom-btn {
-      background: #f1f5f9;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      padding: 5px 10px;
-      font-size: 11px;
-      font-weight: 600;
-      color: #334155;
-      cursor: pointer;
-    }
-
-    /* Modal for Fullscreen Map */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 999;
-      padding: 16px;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-overlay.active {
-      display: flex;
-    }
-    .modal-content {
-      background: white;
-      border-radius: 16px;
-      max-width: 95vw;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 16px;
-      position: relative;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-    .modal-close {
-      position: absolute;
-      top: 10px;
-      right: 12px;
-      background: #f1f5f9;
-      border: none;
-      border-radius: 50%;
-      width: 32px;
-      height: 32px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Image Box */
-    .img-card {
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-bottom: 12px;
-      box-shadow: var(--shadow);
-      background: #e2e8f0;
-    }
-    .img-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-    }
-    .img-card-caption {
-      background: white;
-      padding: 8px 12px;
-      font-size: 11.5px;
-      color: var(--text);
-      font-weight: 600;
-      border-top: 1px solid var(--border);
-    }
-    .img-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-    .img-grid-2 .img-card img {
-      height: 150px;
-    }
-
-    /* Checkbox list */
-    .check-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 0;
-      border-bottom: 1px solid #f1f5f9;
-      font-size: 12.5px;
-    }
-    .check-item input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
-      accent-color: var(--primary);
+      color: #f8fafc;
     }
 
     /* Google Maps Hero & Action Buttons */
@@ -493,6 +188,301 @@
       box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
     }
 
+    /* Main Container */
+    main {
+      padding: 14px 14px 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Section Styling */
+    section {
+      margin-bottom: 24px;
+      scroll-margin-top: 100px;
+    }
+    .section-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 14px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .card-highlight {
+      background: #f0fdf4;
+      border-color: #86efac;
+    }
+    .card-warm {
+      background: #fffbeb;
+      border-color: #fde68a;
+    }
+    .card-alert {
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+
+    /* Image Containers & Grids */
+    .img-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .img-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .img-card-caption {
+      padding: 8px 12px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #475569;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+    }
+    .img-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .img-grid-2 .img-card {
+      margin-bottom: 0;
+    }
+    .img-grid-2 img {
+      height: 125px;
+    }
+
+    /* Buttons */
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      flex: 1;
+      justify-content: center;
+      text-align: center;
+      min-width: 120px;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff !important;
+    }
+    .btn-call {
+      background: #dc2626;
+      color: #ffffff !important;
+    }
+    .btn-sub {
+      background: #f1f5f9;
+      color: #334155 !important;
+      border: 1px solid var(--border);
+    }
+    .btn-map {
+      background: #0284c7;
+      color: #ffffff !important;
+    }
+
+    /* 4-STAGE INTERACTIVE MAP COMPONENT */
+    .stage-map-widget {
+      background: #ffffff;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+    .map-tabs {
+      display: flex;
+      background: #f1f5f9;
+      border-bottom: 1px solid var(--border);
+      padding: 4px;
+      gap: 4px;
+    }
+    .map-tab-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6px 2px;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      color: #64748b;
+      font-size: 10.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      gap: 2px;
+    }
+    .map-tab-btn .tab-icon {
+      font-size: 15px;
+    }
+    .map-tab-btn.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    }
+
+    .map-viewport {
+      position: relative;
+      width: 100%;
+      background: #f8fafc;
+      overflow: hidden;
+      touch-action: pan-y pinch-zoom;
+    }
+    .map-panel {
+      display: none;
+      width: 100%;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+    .map-panel.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .map-panel svg {
+      width: 100%;
+      height: auto;
+      max-height: 380px;
+      display: block;
+    }
+
+    .map-info-card {
+      padding: 12px 14px;
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+    }
+    .map-info-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .map-info-desc {
+      font-size: 11.5px;
+      line-height: 1.55;
+      color: #475569;
+    }
+
+    .map-step-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+    }
+    .map-nav-arrow {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+    }
+    .map-nav-arrow:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+    .map-zoom-btn {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Modal for fullscreen SVG viewing */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 999;
+      padding: 16px;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #ffffff;
+      border-radius: 14px;
+      width: 100%;
+      max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 16px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px; right: 12px;
+      background: #f1f5f9;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    /* Checklist */
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 12px;
+    }
+    .check-item input[type="checkbox"] {
+      width: 17px;
+      height: 17px;
+      accent-color: var(--primary);
+    }
+
     /* Bottom Sticky Nav Bar */
     nav.bottom-nav {
       position: fixed;
@@ -513,7 +503,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 700;
       color: var(--text-muted);
       text-decoration: none;
@@ -524,7 +514,7 @@
       color: var(--primary);
     }
     .nav-icon {
-      font-size: 18px;
+      font-size: 17px;
     }
   </style>
 </head>
@@ -533,29 +523,29 @@
   <!-- Top Sticky Header -->
   <header>
     <div class="header-title">
-      <span>🇦🇺 メルボルン家族滞在</span>
+      <span>🇦🇺 サウス・ヤラ生活ガイド</span>
     </div>
     <a href="tel:000" class="emergency-btn">🚨 緊急通報 000</a>
   </header>
 
   <!-- Horizontal Category Scroller -->
   <div class="cat-scroller">
-    <a href="https://www.google.com/maps/search/?api=1&query=-37.7961,144.9493" target="_blank" rel="noopener noreferrer" class="cat-pill" style="background: #2563eb; color: #ffffff; font-weight: 700;">📍 宿泊先GoogleMap</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=10B+Surrey+Road,+South+Yarra+VIC+3141" target="_blank" rel="noopener noreferrer" class="cat-pill" style="background: #2563eb; color: #ffffff; font-weight: 700;">📍 宿泊先GoogleMap</a>
     <a href="#map" class="cat-pill">🗺️ 4段階地図</a>
-    <a href="#streetview" class="cat-pill">🏘️ 周辺街並み</a>
-    <a href="#airport" class="cat-pill">✈️ 空港アクセス</a>
+    <a href="#streetview" class="cat-pill">🏘️ サウスヤラ街並み</a>
+    <a href="#market" class="cat-pill">🍎 プラーラン市場</a>
+    <a href="#train" class="cat-pill">🚆 電車・トラム</a>
     <a href="#parks" class="cat-pill">🌳 公園・遊び場</a>
+    <a href="#botanic" class="cat-pill">🌿 王立植物園</a>
+    <a href="#supermarket" class="cat-pill">🛒 スーパー買い出し</a>
+    <a href="#cafe" class="cat-pill">☕ カフェ・ベビーチーノ</a>
+    <a href="#medical" class="cat-pill">🏥 救急・小児医療</a>
+    <a href="#airport" class="cat-pill">✈️ 空港アクセス</a>
     <a href="#zoo" class="cat-pill">🐨 動物園</a>
     <a href="#museum" class="cat-pill">🦖 博物館・恐竜</a>
     <a href="#beach" class="cat-pill">🏖️ 海・ペンギン</a>
-    <a href="#botanic" class="cat-pill">🌿 植物園</a>
     <a href="#aquarium" class="cat-pill">🦈 水族館</a>
     <a href="#library" class="cat-pill">📚 州立図書館</a>
-    <a href="#tram" class="cat-pill">🚋 トラム乗り方</a>
-    <a href="#supermarket" class="cat-pill">🛒 スーパー買い出し</a>
-    <a href="#qvm" class="cat-pill">🍎 QVM市場</a>
-    <a href="#cafe" class="cat-pill">☕ カフェ・ベビーチーノ</a>
-    <a href="#medical" class="cat-pill">🏥 救急・小児医療</a>
     <a href="#longstay" class="cat-pill">🧺 長期滞在・洗濯</a>
   </div>
 
@@ -564,17 +554,17 @@
     <div class="hero-tag">Family Long Stay Guide</div>
     <h1>小さな子どもと暮らす<br>メルボルン20日間滞在ハンドブック</h1>
     <p>
-      滞在拠点：<strong>Flemington Road（ノース・メルボルン / パークビル境界）</strong><br>
-      目の前の大公園、動物園、空港直結高速、南半球トップの小児病院。小さな子ども連れの長期滞在に最適な生活ナビゲーション
+      滞在拠点：<strong>10B Surrey Road, South Yarra, VIC 3141</strong><br>
+      名門サウス・ヤラの閑静な住宅街。プラーラン市場まで徒歩6分、電車でCBDまで5分、トラム直通でビーチや植物園へ。子ども連れに最高峰の治安と利便性を誇る街の完全ガイド。
     </p>
     <div class="hero-badges">
-      <span class="hero-badge">🚋 トラムStop 19直結</span>
-      <span class="hero-badge">🌳 目の前が巨大公園</span>
-      <span class="hero-badge">🏥 正面が小児病院</span>
-      <span class="hero-badge">🛒 徒歩6分にWoolworths</span>
+      <span class="hero-badge">🚆 サウスヤラ駅 電車5分で都心</span>
+      <span class="hero-badge">🍎 プラーラン市場 徒歩6分</span>
+      <span class="hero-badge">🚋 トラム72/78/58 網羅</span>
+      <span class="hero-badge">🌳 目の前にSurrey Rd Park</span>
     </div>
     <div style="margin-top: 14px;">
-      <a href="https://www.google.com/maps/search/?api=1&query=-37.7961,144.9493" target="_blank" rel="noopener noreferrer" class="btn-gmap-hero">
+      <a href="https://www.google.com/maps/search/?api=1&query=10B+Surrey+Road,+South+Yarra+VIC+3141" target="_blank" rel="noopener noreferrer" class="btn-gmap-hero">
         <span style="font-size: 18px;">📍</span>
         <span>宿泊先の位置をGoogleマップで開く</span>
         <span style="font-size: 11.5px; opacity: 0.9; margin-left: 2px;">(ナビ起動) ↗</span>
@@ -592,18 +582,19 @@
         <p style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">タップするとそのまま電話発信できます。</p>
         <div class="btn-row">
           <a href="tel:000" class="btn btn-call">🚨 警察・救急・消防 (000)</a>
-          <a href="tel:+61393455522" class="btn btn-primary">🏥 目の前の小児病院ER</a>
+          <a href="tel:+61390762000" class="btn btn-primary">🏥 The Alfred病院 救急ER</a>
+          <a href="tel:+61393455522" class="btn btn-sub">🏥 RCH小児専門病院ER</a>
           <a href="tel:+61396794510" class="btn btn-sub">🇯🇵 日本国総領事館</a>
           <a href="tel:131450" class="btn btn-sub">🗣️ 無料通訳 TIS (131 450)</a>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 1: 4-STAGE GEOGRAPHICAL MAP (UPGRADED INTERACTIVE WIDGET) -->
+    <!-- SECTION 1: 4-STAGE GEOGRAPHICAL MAP -->
     <section id="map">
       <div class="section-title">🗺️ 位置関係まるわかり！4段階地図</div>
       <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">
-        タップしてズームレベルを切り替えられます。スマホ画面にジャストフィットした高精細ベクター地図です。
+        タップしてズームレベルを切り替えられます。サウス・ヤラ（10B Surrey Rd）に特化した高精細ベクター地図です。
       </p>
 
       <div class="stage-map-widget">
@@ -627,217 +618,239 @@
           </button>
         </div>
 
-        <!-- Viewport -->
-        <div class="map-viewport">
-          
-          <!-- PANEL 0: AUSTRALIA WIDE -->
+        <!-- Map Viewport -->
+        <div class="map-viewport" id="map-viewport">
+
+          <!-- MAP 1: AUSTRALIA CONTINENT -->
           <div class="map-panel active" id="map-panel-0">
-            <div class="map-svg-wrap">
-              <svg viewBox="0 0 360 270">
-                <defs>
-                  <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#f0f9ff" />
-                    <stop offset="100%" stop-color="#e0f2fe" />
-                  </linearGradient>
-                  <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#f8fafc" />
-                    <stop offset="100%" stop-color="#e2e8f0" />
-                  </linearGradient>
-                  <filter id="shadowGlow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f2942" flood-opacity="0.15"/>
-                  </filter>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#oceanGrad)" rx="8" />
-                
-                <!-- Australia Continent -->
-                <path d="M 70,85 C 80,60 110,65 130,80 C 145,65 170,45 195,35 C 205,50 215,80 230,85 C 255,80 280,105 295,130 C 310,160 295,190 270,210 C 255,225 235,220 220,225 C 200,215 185,210 170,215 C 140,210 115,200 95,185 C 70,175 50,155 45,135 C 40,110 55,95 70,85 Z" fill="url(#landGrad)" stroke="#94a3b8" stroke-width="2" filter="url(#shadowGlow)" />
-                <!-- Tasmania -->
-                <path d="M 230,240 C 242,235 248,245 242,255 C 235,258 226,252 230,240 Z" fill="url(#landGrad)" stroke="#94a3b8" stroke-width="1.5" />
+            <svg viewBox="0 0 360 270" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#e0f2fe" />
+                  <stop offset="100%" stop-color="#bae6fd" />
+                </linearGradient>
+                <filter id="shadow1" x="-10%" y="-10%" width="120%" height="120%">
+                  <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.15" />
+                </filter>
+              </defs>
+              <rect width="360" height="270" fill="url(#oceanGrad)" />
+              <text x="35" y="42" font-size="12" fill="#0369a1" font-weight="800" letter-spacing="1">PACIFIC OCEAN</text>
+              <text x="15" y="180" font-size="11" fill="#0369a1" font-weight="700" opacity="0.6">INDIAN OCEAN</text>
 
-                <!-- Tokyo Origin (Top Right Indicator) -->
-                <rect x="235" y="10" width="115" height="22" rx="4" fill="#0f2942" />
-                <text x="292" y="24" font-size="9" fill="#ffffff" font-weight="700" text-anchor="middle">🇯🇵 日本 (成田/羽田)</text>
-                <!-- Flight Path -->
-                <path d="M 292,32 Q 310,120 240,224" fill="none" stroke="#0284c7" stroke-width="2" stroke-dasharray="4,4" />
-                <rect x="250" y="110" width="95" height="18" rx="3" fill="#0284c7" />
-                <text x="297" y="122" font-size="8.5" fill="#ffffff" font-weight="700" text-anchor="middle">✈️ 直行便 約10時間</text>
+              <path d="M 60,65 Q 110,40 180,55 Q 210,35 220,70 Q 240,90 280,75 Q 310,100 290,140 Q 295,190 270,200 Q 240,215 210,210 Q 180,225 150,205 Q 90,210 65,160 Q 45,130 55,90 Z" 
+                    fill="#fef3c7" stroke="#d97706" stroke-width="2" filter="url(#shadow1)" />
+              <path d="M 215,225 Q 230,222 235,235 Q 225,248 215,242 Z" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" />
+              <text x="238" y="238" font-size="8.5" fill="#78350f" font-weight="600">タスマニア島</text>
 
-                <!-- Major Cities -->
-                <circle cx="235" cy="80" r="3.5" fill="#64748b" />
-                <text x="242" y="83" font-size="9" fill="#475569" font-weight="700">ケアンズ</text>
+              <path d="M 210,55 L 210,210" stroke="#d97706" stroke-width="1" stroke-dasharray="3,3" opacity="0.5" />
+              <path d="M 60,110 L 210,110" stroke="#d97706" stroke-width="1" stroke-dasharray="3,3" opacity="0.5" />
+              <path d="M 210,150 L 290,150" stroke="#d97706" stroke-width="1" stroke-dasharray="3,3" opacity="0.5" />
+              <text x="218" y="185" font-size="9" fill="#92400e" font-weight="bold">VIC州</text>
+              <text x="225" y="130" font-size="8.5" fill="#92400e" opacity="0.7">NSW州</text>
+              <text x="120" y="140" font-size="11" fill="#b45309" font-weight="700" letter-spacing="1">AUSTRALIA</text>
 
-                <circle cx="282" cy="135" r="3.5" fill="#64748b" />
-                <text x="232" y="138" font-size="9" fill="#475569" font-weight="700">ブリスベン</text>
+              <!-- Cities -->
+              <circle cx="280" cy="165" r="3.5" fill="#64748b" />
+              <text x="286" y="168" font-size="8.5" fill="#334155" font-weight="600">シドニー</text>
+              <circle cx="270" cy="180" r="3" fill="#64748b" />
+              <text x="276" y="182" font-size="7.5" fill="#475569">キャンベラ</text>
+              <circle cx="175" cy="185" r="3" fill="#64748b" />
+              <text x="135" y="188" font-size="7.5" fill="#475569">アデレード</text>
 
-                <circle cx="270" cy="180" r="4" fill="#64748b" />
-                <text x="220" y="183" font-size="9.5" fill="#475569" font-weight="700">シドニー</text>
+              <!-- Flight path from Japan -->
+              <path d="M 170,10 Q 200,80 220,205" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="6,4" />
+              <rect x="130" y="8" width="84" height="20" rx="4" fill="#ffffff" stroke="#ef4444" stroke-width="1.2" />
+              <text x="172" y="22" font-size="9" fill="#dc2626" font-weight="bold" text-anchor="middle">🇯🇵 日本より直行約10h</text>
 
-                <circle cx="58" cy="155" r="3.5" fill="#64748b" />
-                <text x="65" y="158" font-size="9" fill="#475569" font-weight="700">パース</text>
-
-                <!-- MELBOURNE PIN & CALLOUT -->
-                <circle cx="232" cy="223" r="10" fill="#dc2626" opacity="0.25">
-                  <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="232" cy="223" r="5.5" fill="#dc2626" stroke="#ffffff" stroke-width="1.5" />
-                
-                <rect x="75" y="235" width="145" height="24" rx="4" fill="#dc2626" filter="url(#shadowGlow)" />
-                <polygon points="220,247 228,240 220,233" fill="#dc2626" />
-                <text x="147" y="251" font-size="10" fill="#ffffff" font-weight="800" text-anchor="middle">★ メルボルン (ご滞在先)</text>
-              </svg>
-            </div>
+              <!-- Melbourne Destination Badge -->
+              <circle cx="220" cy="205" r="9" fill="#dc2626" opacity="0.25" />
+              <circle cx="220" cy="205" r="6" fill="#dc2626" />
+              <circle cx="220" cy="205" r="2.5" fill="#ffffff" />
+              <rect x="155" y="218" width="130" height="28" rx="6" fill="#1e293b" filter="url(#shadow1)" />
+              <text x="220" y="231" font-size="9.5" fill="#ffffff" font-weight="bold" text-anchor="middle">📍 メルボルン（VIC州）</text>
+              <text x="220" y="242" font-size="8" fill="#cbd5e1" text-anchor="middle">時差わずか+1h / 南東部</text>
+            </svg>
           </div>
 
-          <!-- PANEL 1: METRO MELBOURNE -->
+          <!-- MAP 2: MELBOURNE GREATER REGION -->
           <div class="map-panel" id="map-panel-1">
-            <div class="map-svg-wrap">
-              <svg viewBox="0 0 360 270">
-                <defs>
-                  <linearGradient id="bayWater" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#bae6fd" />
-                    <stop offset="100%" stop-color="#7dd3fc" />
-                  </linearGradient>
-                </defs>
-                <rect width="100%" height="100%" fill="#f1f5f9" rx="8" />
+            <svg viewBox="0 0 360 270" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="shadow2" x="-10%" y="-10%" width="120%" height="120%">
+                  <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.12" />
+                </filter>
+              </defs>
+              <rect width="360" height="270" fill="#f1f5f9" />
+              <path d="M 120,270 C 130,230 140,200 170,175 C 190,160 215,165 240,190 C 265,215 285,245 295,270 Z" fill="#bae6fd" stroke="#0284c7" stroke-width="1.5" />
+              <text x="200" y="235" font-size="12" fill="#0369a1" font-weight="bold" letter-spacing="1">ポートフィリップ湾</text>
 
-                <!-- Port Phillip Bay (Ocean) -->
-                <path d="M 80,140 C 120,150 170,170 190,205 C 205,230 220,270 190,270 L 40,270 L 40,170 Z" fill="url(#bayWater)" stroke="#38bdf8" stroke-width="2" />
-                <text x="80" y="225" font-size="11" fill="#0369a1" font-weight="800">ポート・フィリップ湾 (海)</text>
+              <!-- Yarra River -->
+              <path d="M 330,135 Q 260,130 220,138 Q 185,145 155,148 Q 130,150 115,165" fill="none" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" />
+              <text x="265" y="128" font-size="8" fill="#0284c7" font-weight="bold">ヤラ川 (Yarra River)</text>
 
-                <!-- CityLink Freeway (M2) from Airport -->
-                <path d="M 75,45 Q 125,85 165,115" fill="none" stroke="#f59e0b" stroke-width="5" stroke-linecap="round" />
-                <path d="M 75,45 Q 125,85 165,115" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4,4" />
-                <rect x="70" y="75" width="105" height="18" rx="3" fill="#fef3c7" stroke="#f59e0b" />
-                <text x="122" y="87" font-size="8" fill="#b45309" font-weight="800" text-anchor="middle">高速CityLink (車20分)</text>
+              <!-- CityLink & Monash Freeway -->
+              <path d="M 105,60 Q 130,95 160,130 Q 185,145 210,150 Q 255,160 330,180" fill="none" stroke="#f97316" stroke-width="4.5" stroke-linecap="round" />
+              <path d="M 105,60 Q 130,95 160,130 Q 185,145 210,150 Q 255,160 330,180" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="5,4" />
 
-                <!-- Airport Pin -->
-                <circle cx="75" cy="45" r="7" fill="#0284c7" stroke="#ffffff" stroke-width="1.5" />
-                <rect x="25" y="20" width="115" height="20" rx="4" fill="#0284c7" />
-                <text x="82" y="33" font-size="9" fill="#ffffff" font-weight="700" text-anchor="middle">✈️ メルボルン空港 (MEL)</text>
+              <!-- Melbourne Airport -->
+              <rect x="50" y="40" width="115" height="34" rx="6" fill="#ffffff" stroke="#f97316" stroke-width="1.5" filter="url(#shadow2)" />
+              <circle cx="66" cy="57" r="7" fill="#ffedd5" />
+              <text x="66" y="60.5" font-size="10" text-anchor="middle">✈️</text>
+              <text x="80" y="52" font-size="9" fill="#9a3412" font-weight="bold">メルボルン空港 (MEL)</text>
+              <text x="80" y="66" font-size="7.5" fill="#64748b">CityLink直結 車で約30-35分</text>
 
-                <!-- Yarra River -->
-                <path d="M 320,120 Q 250,125 205,135 Q 165,145 130,155" fill="none" stroke="#0284c7" stroke-width="3.5" />
-                <text x="255" y="117" font-size="8.5" fill="#0369a1" font-weight="700">ヤラ川 (Yarra River)</text>
+              <!-- CBD Area -->
+              <rect x="150" y="120" width="46" height="24" rx="4" fill="#64748b" opacity="0.25" />
+              <text x="173" y="136" font-size="9" fill="#334155" font-weight="800" text-anchor="middle">CBD 都心</text>
 
-                <!-- CBD Center Grid Box -->
-                <rect x="160" y="125" width="45" height="28" rx="3" fill="#cbd5e1" stroke="#475569" stroke-width="1.5" />
-                <text x="182" y="142" font-size="9.5" fill="#0f2942" font-weight="800" text-anchor="middle">CBD中心</text>
+              <!-- St Kilda Beach -->
+              <rect x="165" y="195" width="85" height="24" rx="5" fill="#ffffff" stroke="#0284c7" stroke-width="1.2" filter="url(#shadow2)" />
+              <text x="207.5" y="208" font-size="8.5" fill="#0369a1" font-weight="bold" text-anchor="middle">🏖️ セント・キルダ</text>
+              <text x="207.5" y="217" font-size="7" fill="#64748b" text-anchor="middle">ビーチ＆野生ペンギン</text>
 
-                <!-- St Kilda Beach -->
-                <circle cx="195" cy="185" r="5" fill="#0d9488" stroke="#ffffff" stroke-width="1.5" />
-                <rect x="205" y="175" width="135" height="20" rx="3" fill="#0d9488" />
-                <text x="272" y="188" font-size="8.5" fill="#ffffff" font-weight="700" text-anchor="middle">🏖️ セント・キルダ (ペンギン)</text>
+              <!-- Tram 78 line to St Kilda -->
+              <path d="M 210,155 L 205,195" fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="4,3" />
+              <text x="216" y="180" font-size="7" fill="#047857" font-weight="bold">トラム78番直通</text>
 
-                <!-- ACCOMMODATION CALLOUT -->
-                <circle cx="165" cy="115" r="10" fill="#dc2626" opacity="0.3" />
-                <circle cx="165" cy="115" r="6" fill="#dc2626" stroke="#ffffff" stroke-width="1.5" />
-                <rect x="180" y="98" width="150" height="24" rx="4" fill="#dc2626" />
-                <polygon points="180,110 172,115 180,120" fill="#dc2626" />
-                <text x="255" y="113" font-size="9.5" fill="#ffffff" font-weight="800" text-anchor="middle">★ ご宿泊先 (高速出口の直前)</text>
-              </svg>
-            </div>
+              <!-- South Yarra (Accommodation) Marker -->
+              <circle cx="210" cy="153" r="14" fill="#dc2626" opacity="0.2" />
+              <circle cx="210" cy="153" r="8" fill="#dc2626" />
+              <circle cx="210" cy="153" r="3" fill="#ffffff" />
+              <rect x="195" y="100" width="138" height="34" rx="6" fill="#1e293b" filter="url(#shadow2)" />
+              <text x="264" y="114" font-size="9.5" fill="#f87171" font-weight="bold" text-anchor="middle">📍 宿泊先：サウス・ヤラ</text>
+              <text x="264" y="127" font-size="8" fill="#ffffff" text-anchor="middle">10B Surrey Rd (電車5分で都心)</text>
+            </svg>
           </div>
 
-          <!-- PANEL 2: RADIAL ACCESS MAP -->
+          <!-- MAP 3: RADIAL URBAN ACCESS -->
           <div class="map-panel" id="map-panel-2">
-            <div class="map-svg-wrap">
-              <svg viewBox="0 0 360 270">
-                <rect width="100%" height="100%" fill="#ffffff" rx="8" />
-                <!-- Concentric range circles -->
-                <circle cx="180" cy="135" r="55" fill="none" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="3,3" />
-                <circle cx="180" cy="135" r="110" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="3,3" />
-                <text x="185" y="76" font-size="8" fill="#94a3b8">半径 1km</text>
-                <text x="185" y="22" font-size="8" fill="#94a3b8">半径 2km</text>
+            <svg viewBox="0 0 360 270" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="shadow3" x="-10%" y="-10%" width="120%" height="120%">
+                  <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.12" />
+                </filter>
+              </defs>
+              <rect width="360" height="270" fill="#f8fafc" />
 
-                <!-- Center Star (Accommodation) -->
-                <circle cx="180" cy="135" r="18" fill="#dc2626" />
-                <text x="180" y="131" font-size="10" fill="#ffffff" font-weight="800" text-anchor="middle">★ 宿泊先</text>
-                <text x="180" y="143" font-size="8" fill="#fef2f2" text-anchor="middle">Flemington Rd</text>
+              <!-- Concentric Distance / Travel Time Rings from South Yarra -->
+              <circle cx="200" cy="155" r="50" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4,4" />
+              <circle cx="200" cy="155" r="95" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4,4" />
+              <circle cx="200" cy="155" r="140" fill="none" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4,4" />
 
-                <!-- Spots -->
-                <!-- North: Zoo -->
-                <line x1="180" y1="117" x2="180" y2="40" stroke="#0f766e" stroke-width="2" />
-                <rect x="115" y="18" width="130" height="22" rx="4" fill="#0f766e" />
-                <text x="180" y="32" font-size="9" fill="#ffffff" font-weight="700" text-anchor="middle">🐨 動物園 【トラム5分】</text>
+              <rect x="238" y="145" width="46" height="15" rx="3" fill="#e2e8f0" />
+              <text x="261" y="156" font-size="7.5" fill="#64748b" font-weight="bold" text-anchor="middle">約500m圏</text>
+              <rect x="280" y="145" width="48" height="15" rx="3" fill="#e2e8f0" />
+              <text x="304" y="156" font-size="7.5" fill="#64748b" font-weight="bold" text-anchor="middle">約1.5km圏</text>
 
-                <!-- North-West: Royal Park -->
-                <line x1="166" y1="123" x2="70" y2="70" stroke="#16a34a" stroke-width="2" />
-                <rect x="10" y="55" width="125" height="22" rx="4" fill="#16a34a" />
-                <text x="72" y="69" font-size="9" fill="#ffffff" font-weight="700" text-anchor="middle">🌳 自然遊び場 【徒歩2分】</text>
+              <!-- Train line from South Yarra to Flinders St Station (CBD) -->
+              <path d="M 200,155 L 105,75" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" />
+              <path d="M 200,155 L 105,75" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="6,4" />
 
-                <!-- East: RCH Hospital -->
-                <line x1="198" y1="130" x2="280" y2="105" stroke="#e11d48" stroke-width="2" />
-                <rect x="235" y="92" width="120" height="22" rx="4" fill="#e11d48" />
-                <text x="295" y="106" font-size="9" fill="#ffffff" font-weight="700" text-anchor="middle">🏥 小児病院 【目の前1分】</text>
+              <!-- Flinders St / CBD Hub -->
+              <rect x="45" y="45" width="110" height="34" rx="6" fill="#1e40af" filter="url(#shadow3)" />
+              <text x="100" y="59" font-size="9" fill="#ffffff" font-weight="bold" text-anchor="middle">🏛️ CBD・フリンダース駅</text>
+              <text x="100" y="72" font-size="8" fill="#93c5fd" font-weight="bold" text-anchor="middle">🚆 電車でわずか5分！直通</text>
 
-                <!-- East-South: Museum -->
-                <line x1="195" y1="144" x2="275" y2="175" stroke="#7c3aed" stroke-width="2" />
-                <rect x="230" y="165" width="125" height="22" rx="4" fill="#7c3aed" />
-                <text x="292" y="179" font-size="9" fill="#ffffff" font-weight="700" text-anchor="middle">🦖 博物館＆恐竜 【10分】</text>
+              <!-- Royal Botanic Gardens (Northwest) -->
+              <rect x="125" y="100" width="105" height="26" rx="5" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.2" filter="url(#shadow3)" />
+              <text x="177" y="113" font-size="8" fill="#15803d" font-weight="bold" text-anchor="middle">🌿 王立植物園・子ども庭園</text>
+              <text x="177" y="122" font-size="7" fill="#64748b" text-anchor="middle">トラム58番で5分 / 徒歩圏内</text>
 
-                <!-- South: QVM & CBD -->
-                <line x1="180" y1="153" x2="180" y2="225" stroke="#0284c7" stroke-width="2" />
-                <rect x="110" y="225" width="140" height="22" rx="4" fill="#0284c7" />
-                <text x="180" y="239" font-size="9" fill="#ffffff" font-weight="700" text-anchor="middle">🏛️ 州立図書館/CBD 【10分】</text>
+              <!-- Prahran Market (West - 500m) -->
+              <rect x="60" y="140" width="95" height="28" rx="5" fill="#fffbeb" stroke="#d97706" stroke-width="1.3" filter="url(#shadow3)" />
+              <text x="107" y="153" font-size="8.5" fill="#b45309" font-weight="bold" text-anchor="middle">🍎 プラーラン市場</text>
+              <text x="107" y="163" font-size="7" fill="#78350f" text-anchor="middle">徒歩6分（約500m）果物・遊具</text>
+              <line x1="155" y1="155" x2="190" y2="155" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="3,3" />
 
-                <!-- South-West: Woolworths -->
-                <line x1="165" y1="145" x2="70" y2="195" stroke="#15803d" stroke-width="2" />
-                <rect x="15" y="190" width="125" height="22" rx="4" fill="#15803d" />
-                <text x="77" y="204" font-size="9" fill="#ffffff" font-weight="700" text-anchor="middle">🛒 Woolworths 【徒歩6分】</text>
-              </svg>
-            </div>
+              <!-- The Alfred Hospital (West - 1.2km) -->
+              <rect x="50" y="180" width="105" height="26" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2" filter="url(#shadow3)" />
+              <text x="102" y="193" font-size="8" fill="#b91c1c" font-weight="bold" text-anchor="middle">🏥 The Alfred 総合病院ER</text>
+              <text x="102" y="202" font-size="7" fill="#64748b" text-anchor="middle">トラム72番ですぐ / 24h救急</text>
+
+              <!-- Fawkner Park (Northwest) -->
+              <rect x="110" y="218" width="90" height="26" rx="5" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.2" filter="url(#shadow3)" />
+              <text x="155" y="231" font-size="8" fill="#15803d" font-weight="bold" text-anchor="middle">🌳 フォークナー公園</text>
+              <text x="155" y="240" font-size="7" fill="#64748b" text-anchor="middle">巨大遊具・広大な芝生</text>
+
+              <!-- St Kilda Pier (South - Tram 78) -->
+              <rect x="220" y="220" width="95" height="26" rx="5" fill="#eff6ff" stroke="#0284c7" stroke-width="1.2" filter="url(#shadow3)" />
+              <text x="267" y="233" font-size="8" fill="#0369a1" font-weight="bold" text-anchor="middle">🏖️ セントキルダ海辺</text>
+              <text x="267" y="242" font-size="7" fill="#64748b" text-anchor="middle">トラム78番直通15分</text>
+
+              <!-- Accommodation Center Pin -->
+              <circle cx="200" cy="155" r="16" fill="#dc2626" opacity="0.25" />
+              <circle cx="200" cy="155" r="9" fill="#dc2626" />
+              <circle cx="200" cy="155" r="3.5" fill="#ffffff" />
+              <rect x="180" y="115" width="135" height="30" rx="6" fill="#1e293b" filter="url(#shadow3)" />
+              <text x="247" y="128" font-size="9.5" fill="#fef2f2" font-weight="bold" text-anchor="middle">📍 宿泊拠点 (Surrey Rd)</text>
+              <text x="247" y="139" font-size="7.5" fill="#93c5fd" text-anchor="middle">10B Surrey Road, South Yarra</text>
+            </svg>
           </div>
 
-          <!-- PANEL 3: LOCAL STREET MAP -->
+          <!-- MAP 4: SOUTH YARRA LOCAL STREET MAP (SURREY ROAD & ENVIRONS) -->
           <div class="map-panel" id="map-panel-3">
-            <div class="map-svg-wrap">
-              <svg viewBox="0 0 360 270">
-                <rect width="100%" height="100%" fill="#ffffff" rx="8" />
+            <svg viewBox="0 0 360 270" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="shadow4" x="-10%" y="-10%" width="120%" height="120%">
+                  <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.12" />
+                </filter>
+              </defs>
+              <rect width="360" height="270" fill="#f8fafc" />
 
-                <!-- Flemington Road (Diagonal Main Highway) -->
-                <line x1="30" y1="230" x2="330" y2="50" stroke="#e2e8f0" stroke-width="36" stroke-linecap="round" />
-                <line x1="30" y1="230" x2="330" y2="50" stroke="#f8fafc" stroke-width="30" stroke-linecap="round" />
-                <!-- Green Tram median -->
-                <line x1="30" y1="230" x2="330" y2="50" stroke="#10b981" stroke-width="4" stroke-dasharray="6,4" />
-                <text x="260" y="45" font-size="9.5" fill="#475569" font-weight="800">Flemington Road (A60)</text>
+              <!-- Toorak Road (North horizontal road) -->
+              <line x1="20" y1="50" x2="340" y2="50" stroke="#e2e8f0" stroke-width="26" stroke-linecap="round" />
+              <line x1="20" y1="50" x2="340" y2="50" stroke="#10b981" stroke-width="3" stroke-dasharray="5,4" />
+              <text x="270" y="44" font-size="9" fill="#475569" font-weight="bold">Toorak Road (トラム58番)</text>
 
-                <!-- Melrose St -->
-                <line x1="170" y1="145" x2="80" y2="210" stroke="#cbd5e1" stroke-width="18" stroke-linecap="round" />
-                <text x="110" y="180" font-size="8.5" fill="#64748b" transform="rotate(-35, 110, 180)">Melrose St</text>
+              <!-- Malvern Road / Commercial Road (South horizontal road) -->
+              <line x1="20" y1="210" x2="340" y2="210" stroke="#e2e8f0" stroke-width="26" stroke-linecap="round" />
+              <line x1="20" y1="210" x2="340" y2="210" stroke="#f59e0b" stroke-width="3" stroke-dasharray="5,4" />
+              <text x="250" y="226" font-size="9" fill="#475569" font-weight="bold">Malvern Rd (トラム72番)</text>
 
-                <!-- Nature Play / Park (North-East) -->
-                <rect x="120" y="10" width="150" height="35" rx="5" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5" />
-                <text x="195" y="26" font-size="9" fill="#15803d" font-weight="800" text-anchor="middle">🌳 ロイヤルパーク</text>
-                <text x="195" y="38" font-size="8" fill="#166534" text-anchor="middle">Nature Play 水遊び場 (徒歩2分)</text>
+              <!-- Chapel Street (West vertical major shopping strip) -->
+              <line x1="90" y1="30" x2="90" y2="235" stroke="#e2e8f0" stroke-width="24" stroke-linecap="round" />
+              <line x1="90" y1="30" x2="90" y2="235" stroke="#0284c7" stroke-width="3" stroke-dasharray="5,4" />
+              <text x="82" y="130" font-size="8.5" fill="#0369a1" font-weight="800" transform="rotate(-90 82,130)" text-anchor="middle">Chapel St (トラム78番 / カフェ街)</text>
 
-                <!-- RCH Hospital (East) -->
-                <rect x="250" y="65" width="105" height="42" rx="5" fill="#ffe4e6" stroke="#f43f5e" stroke-width="1.5" />
-                <text x="302" y="82" font-size="9" fill="#be123c" font-weight="800" text-anchor="middle">🏥 小児病院 (RCH)</text>
-                <text x="302" y="94" font-size="7.5" fill="#881337" text-anchor="middle">正面水槽・24h救急</text>
+              <!-- Surrey Road (North-South residential street where house is located) -->
+              <line x1="205" y1="55" x2="205" y2="210" stroke="#cbd5e1" stroke-width="16" stroke-linecap="round" />
+              <text x="215" y="105" font-size="8.5" fill="#64748b" font-weight="bold">Surrey Road</text>
 
-                <!-- Stop 19 Tram Station -->
-                <rect x="190" y="108" width="60" height="18" rx="4" fill="#0f766e" />
-                <text x="220" y="120" font-size="8" fill="#ffffff" font-weight="800" text-anchor="middle">🚊 Stop 19</text>
+              <!-- Cromwell Road (Parallel street east of Surrey) -->
+              <line x1="275" y1="55" x2="275" y2="210" stroke="#e2e8f0" stroke-width="12" />
 
-                <!-- Accommodation Pin -->
-                <circle cx="180" cy="148" r="10" fill="#dc2626" />
-                <polygon points="180,140 183,147 190,147 185,151 187,158 180,153 173,158 175,151 170,147 177,147" fill="#ffffff" />
-                <rect x="180" y="162" width="75" height="18" rx="3" fill="#dc2626" />
-                <text x="217" y="174" font-size="8.5" fill="#ffffff" font-weight="800" text-anchor="middle">★ ご宿泊先</text>
+              <!-- Surrey Road Park (Playground - right next to house!) -->
+              <rect x="220" y="145" width="85" height="32" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2" />
+              <text x="262" y="159" font-size="8" fill="#15803d" font-weight="800" text-anchor="middle">🌳 Surrey Rd Park</text>
+              <text x="262" y="170" font-size="7" fill="#166534" text-anchor="middle">遊具・滑り台 (徒歩1分)</text>
 
-                <!-- Woolworths -->
-                <rect x="15" y="195" width="115" height="34" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5" />
-                <text x="72" y="210" font-size="9" fill="#15803d" font-weight="800" text-anchor="middle">🛒 Woolworths</text>
-                <text x="72" y="222" font-size="7.5" fill="#166534" text-anchor="middle">無料フルーツ・食材 (徒歩6分)</text>
-                <!-- Dotted Walk Route -->
-                <path d="M 170,155 L 90,210" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-dasharray="3,3" />
+              <!-- Prahran Market & Prahran Square (West on Commercial Rd) -->
+              <rect x="25" y="180" width="55" height="38" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="1.3" filter="url(#shadow4)" />
+              <text x="52.5" y="196" font-size="8" fill="#b45309" font-weight="800" text-anchor="middle">🍎 プラーラン市場</text>
+              <text x="52.5" y="206" font-size="6.8" fill="#92400e" text-anchor="middle">徒歩6分 生鮮・遊具</text>
 
-                <!-- Errol St Cafes -->
-                <rect x="220" y="215" width="125" height="34" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5" />
-                <text x="282" y="230" font-size="9" fill="#b45309" font-weight="800" text-anchor="middle">☕ Errol St カフェ街</text>
-                <text x="282" y="242" font-size="7.5" fill="#92400e" text-anchor="middle">Auction Rooms (徒歩10分)</text>
-              </svg>
-            </div>
+              <!-- South Yarra Station (Northwest on Toorak Rd) -->
+              <rect x="25" y="32" width="60" height="32" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.3" filter="url(#shadow4)" />
+              <text x="55" y="47" font-size="8" fill="#1d4ed8" font-weight="800" text-anchor="middle">🚆 サウスヤラ駅</text>
+              <text x="55" y="58" font-size="6.8" fill="#1e40af" text-anchor="middle">都心まで電車5分</text>
+
+              <!-- Woolworths & Big W Vogue Plaza (North on Chapel St) -->
+              <rect x="98" y="65" width="85" height="26" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.2" />
+              <text x="140" y="78" font-size="7.5" fill="#1e40af" font-weight="bold" text-anchor="middle">🛒 Woolworths & Big W</text>
+              <text x="140" y="87" font-size="6.5" fill="#64748b" text-anchor="middle">子供服・おもちゃ・日用品</text>
+
+              <!-- Walking dotted line from house to Prahran Market -->
+              <path d="M 205,150 L 140,150 L 140,195 L 80,195" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="3,3" />
+
+              <!-- Accommodation 10B Surrey Road Marker -->
+              <circle cx="205" cy="150" r="14" fill="#dc2626" opacity="0.25" />
+              <circle cx="205" cy="150" r="7.5" fill="#dc2626" />
+              <circle cx="205" cy="150" r="2.5" fill="#ffffff" />
+              
+              <rect x="140" y="118" width="130" height="26" rx="5" fill="#dc2626" filter="url(#shadow4)" />
+              <text x="205" y="131" font-size="9" fill="#ffffff" font-weight="800" text-anchor="middle">🏠 10B Surrey Road</text>
+              <text x="205" y="140" font-size="7" fill="#fef2f2" text-anchor="middle">サウス・ヤラ 宿泊拠点</text>
+            </svg>
           </div>
 
         </div>
@@ -849,7 +862,7 @@
             <span style="font-size: 10px; color: var(--primary); font-weight: bold;">Step 1/4</span>
           </div>
           <p class="map-info-desc" id="map-info-desc">
-            オーストラリア大陸南東部のビクトリア州都。日本（成田/羽田）から直行便で約10時間。時差はわずか+1時間（サマータイム時は+2時間）で時差ボケが少ないのが魅力です。南半球のため日本と季節が真逆です。
+            オーストラリア大陸南東部のビクトリア州都。日本（成田/羽田）から直行便で約10時間。時差はわずか+1時間（サマータイム時は+2時間）で子どもの時差ボケ負担が極めて少ないのが魅力です。
           </p>
           <div id="map-info-action"></div>
         </div>
@@ -862,453 +875,375 @@
         </div>
       </div>
 
-      <!-- User Uploaded Map Card -->
-      <div class="img-card">
-        <img src="images/user_map.jpg" alt="宿泊先周辺マップ">
-        <div class="img-card-caption">📍 Google Maps 宿泊先周辺詳細図（Flemington Rd / RCH南側）</div>
-      </div>
-
       <!-- Google Maps Dedicated Action Card -->
       <div class="card" style="margin-top: 12px; background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 14px; padding: 14px;">
         <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 8px;">
           <div style="font-size: 24px; line-height: 1;">📍</div>
           <div>
-            <div style="font-size: 13.5px; font-weight: 700; color: #166534;">宿泊先（Flemington Road, North Melbourne）</div>
-            <div style="font-size: 11px; color: #15803d;">トラムStop 19直結・小児病院向かい・Woolworths徒歩6分</div>
+            <div style="font-size: 13.5px; font-weight: 700; color: #166534;">宿泊先（10B Surrey Road, South Yarra）</div>
+            <div style="font-size: 11px; color: #15803d;">サウスヤラ駅 電車5分でCBD / プラーラン市場徒歩6分 / トラム72・78・58至近</div>
           </div>
         </div>
         <p style="font-size: 11.5px; color: #374151; line-height: 1.55; margin-bottom: 11px;">
-          Googleマップアプリでピン位置を表示したり、メルボルン市内各所から宿泊先への徒歩・トラム帰宅ルートをワンタップで検索できます。
+          Googleマップアプリでピンの正確な位置を開いたり、外出先から宿泊先までの徒歩・電車・トラムでの帰り道ルートをワンタップで検索できます。
         </p>
         <div class="btn-row" style="display: flex; flex-direction: column; gap: 8px;">
-          <a href="https://www.google.com/maps/search/?api=1&query=-37.7961,144.9493" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="justify-content: center; font-size: 13.5px; font-weight: 700; padding: 12px; background: #2563eb; color: #ffffff; text-decoration: none; border-radius: 10px; box-shadow: 0 3px 10px rgba(37,99,235,0.25); display: flex; align-items: center; gap: 6px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=10B+Surrey+Road,+South+Yarra+VIC+3141" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="justify-content: center; font-size: 13.5px; font-weight: 700; padding: 12px; background: #2563eb; color: #ffffff; text-decoration: none; border-radius: 10px; box-shadow: 0 3px 10px rgba(37,99,235,0.25); display: flex; align-items: center; gap: 6px;">
             <span>📍 宿泊先の位置をGoogleマップで開く</span>
             <span style="font-size: 11.5px; opacity: 0.9;">(アプリ起動) ↗</span>
           </a>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=-37.7961,144.9493" target="_blank" rel="noopener noreferrer" class="btn btn-sub" style="justify-content: center; font-size: 12px; font-weight: 600; padding: 10px; background: #ffffff; color: #1e40af; border: 1.5px solid #bfdbfe; text-decoration: none; border-radius: 10px; display: flex; align-items: center; gap: 6px;">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=10B+Surrey+Road,+South+Yarra+VIC+3141" target="_blank" rel="noopener noreferrer" class="btn btn-sub" style="justify-content: center; font-size: 12px; font-weight: 600; padding: 10px; background: #ffffff; color: #1e40af; border: 1.5px solid #bfdbfe; text-decoration: none; border-radius: 10px; display: flex; align-items: center; gap: 6px;">
             <span>🧭 現在地から宿泊先への経路案内（帰り道ナビ） ↗</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 2: STREET VIEW -->
+    <!-- SECTION 2: STREET VIEW & NEIGHBORHOOD -->
     <section id="streetview">
-      <div class="section-title">🏘️ 宿泊先周辺ストリートビュー・街並み</div>
+      <div class="section-title">🏘️ サウス・ヤラ周辺の街並み・雰囲気</div>
       <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">
-        宿泊先の目の前の実際の街並みです。歩道が広く段差のないフラットな歩道が整備され、ベビーカー連れでも安心です。
+        サウス・ヤラはメルボルン屈指の美しさと治安を誇る洗練されたエリア。並木道が続き、ベビーカーの押しやすさも抜群です。
       </p>
 
       <div class="img-grid-2">
         <div class="img-card">
-          <img src="images/street_melrose.jpg" alt="Melrose St交差点">
-          <div class="img-card-caption">Flemington Rd と Melrose St 角（スーパーへの曲がり角）</div>
+          <img src="images/sy_chapel_street.jpg" alt="チャペル通り">
+          <div class="img-card-caption">徒歩3分のChapel Street（カフェ・ショップが並ぶ大通り）</div>
         </div>
         <div class="img-card">
-          <img src="images/street_flemington.jpg" alt="Flemington Road大通り">
-          <div class="img-card-caption">Flemington Road（中央にトラム軌道、両側に並木道）</div>
+          <img src="images/sy_chapel_tram.jpg" alt="チャペル通りトラム">
+          <div class="img-card-caption">チャペル通りを走るトラム78番（南へ直通で海へ）</div>
         </div>
       </div>
 
       <div class="img-grid-2">
         <div class="img-card">
-          <img src="images/street_rmh.jpg" alt="東側並木道">
-          <div class="img-card-caption">東側・病院前通り（緑豊かな街路樹とフラットな歩道）</div>
+          <img src="images/sy_station.jpg" alt="サウスヤラ駅">
+          <div class="img-card-caption">South Yarra 駅舎（都心フリンダース駅へわずか2駅5分）</div>
         </div>
         <div class="img-card">
-          <img src="images/street_terrace.jpg" alt="ノースメルボルンのテラスハウス">
-          <div class="img-card-caption">住宅街（ノースメルボルンの歴史あるビクトリア調家並み）</div>
+          <img src="images/sy_toorak_road.jpg" alt="トゥーラック通り">
+          <div class="img-card-caption">Toorak Road（トラム58番が走り、老舗ベーカリー多数）</div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: AIRPORT ACCESS -->
-    <section id="airport">
-      <div class="section-title">✈️ 空港アクセス＆子連れ移動ガイド</div>
-      <div class="img-card">
-        <img src="images/melbourne_airport.jpg" alt="メルボルン空港">
-        <div class="img-card-caption">メルボルン空港（MEL / タラマリン空港）</div>
+    <!-- SECTION 3: PRAHRAN MARKET -->
+    <section id="market">
+      <div class="section-title">🍎 プラーラン市場（Prahran Market）徒歩6分</div>
+      <div class="img-grid-2">
+        <div class="img-card">
+          <img src="images/sy_prahran_market.jpg" alt="プラーラン市場外観">
+          <div class="img-card-caption">プラーラン市場 外観（Commercial Rd沿い）</div>
+        </div>
+        <div class="img-card">
+          <img src="images/sy_prahran_market_inside.jpg" alt="プラーラン市場内">
+          <div class="img-card-caption">新鮮な果物・焼きたてパン・チーズがずらり</div>
+        </div>
       </div>
 
       <div class="card card-highlight">
-        <div style="font-size: 13.5px; font-weight: 700; color: #166534; margin-bottom: 4px;">🚕 空港から車でわずか20分！高速直結の絶好ロケーション</div>
-        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 8px;">
-          空港と都心を結ぶ有料高速「CityLink」は、ちょうど宿泊先の目の前（Flemington Road出口）が都心側の終点。混雑するCBD市街地を一切通過せず、空港からノンストップ約20分（運賃約$55〜$70）で宿の玄関前に到着できます！
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">メルボルン最古のグルメ市場で美味しく遊ぶ！</div>
+        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+          10B Surrey Roadから西へフラットな道を徒歩6分。朝摘みベリーやバナナ、無添加ソーセージ、焼きたてクロワッサンが手に入ります。
         </p>
-        <div style="font-size: 11.5px; color: #334155; line-height: 1.5;">
-          • <strong>タクシーのチャイルドシート規則:</strong> ビクトリア州法では、正規タクシーはチャイルドシート義務が免除されており、後部座席で大人が抱っこまたはシートベルト着用で合法的に乗車可能です。<br>
-          • <strong>Uberの場合:</strong> アプリで「Uber Car Seat」を選択するか、空港のタクシー乗り場から通常のイエローキャブを利用するのが確実です。
+        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6; color: #334155;">
+          <li><strong>子ども用プレイエリア（Market Square）:</strong> 中庭に人工芝と滑り台遊具があり、大人がコーヒーを飲む間に子どもが安心して遊べます。</li>
+          <li><strong>キッズフレンドリー:</strong> 通路が広くベビーカーで楽々通行可能。授乳室・オムツ替え台完備。</li>
+          <li><strong>営業日:</strong> 火・木・金・土・日（※月・水は定休日なのでご注意ください）。</li>
+        </ul>
+        <div class="btn-row">
+          <a href="https://maps.google.com/?q=Prahran+Market" target="_blank" class="btn btn-map">📍 プラーラン市場をGoogleマップで開く</a>
         </div>
-      </div>
-
-      <div class="card">
-        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">🚌 SkyBus（空港直行バス）を使う場合</div>
-        <p style="font-size: 12px; color: #475569;">
-          空港からサザンクロス駅までSkyBus（大人片道約$24、子ども無料/割引）。サザンクロス駅からタクシー（約10分・$15程度）に乗り換えて宿泊先へ向かうのがスムーズです。
-        </p>
       </div>
     </section>
 
-    <!-- SECTION 4: ROYAL PARK & NATURE PLAY -->
+    <!-- SECTION 4: TRAIN & TRAM TRANSPORT -->
+    <section id="train">
+      <div class="section-title">🚋 サウスヤラの無敵アクセス（電車＆トラム）</div>
+      <div class="img-card">
+        <img src="images/pram_tram.jpg" alt="トラムベビーカー乗車">
+        <div class="img-card-caption">ベビーカーも乗せやすい低床トラム＆電車</div>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">どこへ行くにも最短・直通の黄金ポジション</div>
+        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.65;">
+          <li><strong>🚆 電車（サウスヤラ駅）:</strong> 徒歩10分またはトラム利用。フリンダース駅（Flinders St）まで快速で<strong>わずか5〜7分</strong>！日中は2〜3分間隔で電車が来るため時刻表不要。</li>
+          <li><strong>🚋 トラム72番（Malvern Rd）:</strong> 宿から南へ徒歩3分。Swanston Stを通ってメルボルン都心中心部・州立図書館へ直通。</li>
+          <li><strong>🚋 トラム78番（Chapel St）:</strong> 宿から西へ徒歩3分。南北を縦断し、セントキルダ海岸まで15分で直通！</li>
+          <li><strong>🚋 トラム58番（Toorak Rd）:</strong> 宿から北へ徒歩6分。王立植物園、都心ウィリアム通り、そしてロイヤルチルドレンズ小児病院（RCH）・メルボルン動物園まで乗り換えなし1本！</li>
+          <li><strong>👶 運賃ルール:</strong> 4歳以下の子どもは電車・トラムともに完全無料！保護者はmyki（またはGoogle Wallet）をタップして乗車します。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PARKS & PLAYGROUNDS -->
     <section id="parks">
-      <div class="section-title">🌳 正面！Royal Park & Nature Play遊び場</div>
+      <div class="section-title">🌳 近隣の公園・子ども遊び場</div>
       <div class="img-grid-2">
         <div class="img-card">
-          <img src="images/royal_park.jpg" alt="ロイヤルパーク">
-          <div class="img-card-caption">広大なユーカリの林と芝生広場</div>
+          <img src="images/sy_fawkner_park.jpg" alt="フォークナー公園">
+          <div class="img-card-caption">広大なFawkner Park（徒歩12分/トラムすぐ）</div>
         </div>
         <div class="img-card">
-          <img src="images/playground_fun.jpg" alt="Nature Play遊具">
-          <div class="img-card-caption">全豪ベスト遊び場賞の本格遊具</div>
+          <img src="images/melb_playground.jpg" alt="遊具遊び">
+          <div class="img-card-caption">安全なゴム舗装と木製アスレチック遊具</div>
         </div>
       </div>
 
       <div class="card card-highlight">
-        <div style="font-size: 13.5px; font-weight: 700; color: #166534; margin-bottom: 4px;">🌊 子どもが夢中になる4つの遊びゾーン</div>
-        <p style="font-size: 12px; margin-bottom: 8px;">
-          宿泊先から道路を渡って徒歩2分。オーストラリアのランドスケープ賞を受賞した最高峰の遊び場です。
-        </p>
-        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6;">
-          <li><strong>💧 水遊びゾーン（Water Play）:</strong> 手押しポンプから水が流れ、砂場で泥遊びやダム作り。※着替え・タオル必携！</li>
-          <li><strong>🧗 岩登り＆ロープネット:</strong> 自然石やネットをよじ登る冒険アスレチック。</li>
-          <li><strong>🛝 丘のロングすべり台:</strong> 丘の斜面を利用した迫力の長いすべり台。</li>
-          <li><strong>🦜 野生のオウム観察:</strong> ピンク色のモモイロインコや白いキバタンが芝生に降りてきます。</li>
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">毎日通える近所の遊び場スポット</div>
+        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6; color: #334155;">
+          <li><strong>Surrey Road Park（徒歩1分）:</strong> 宿の目の前！フェンス付きで安心な滑り台、ブランコ、スプリング遊具。朝起きてすぐやお風呂前のちょっとした外遊びに最適。</li>
+          <li><strong>Princes Gardens（徒歩6分）:</strong> チャペル通り西側。芝生広場とプレイグラウンド、さらにプラーラン市民温水プール（Prahran Aquatic Centre）が併設。</li>
+          <li><strong>Fawkner Park（徒歩12分 / トラム72番で3分）:</strong> エルム並木が美しい超巨大公園。幼児専用の囲い付きプレイグラウンドや木製船型遊具、無料BBQ台、公衆トイレ完備。</li>
         </ul>
         <div class="btn-row">
-          <a href="https://maps.google.com/?q=Royal+Park+Nature+Play+Melbourne" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
+          <a href="https://maps.google.com/?q=Fawkner+Park+Childrens+Playground" target="_blank" class="btn btn-map">📍 Fawkner Park 遊び場を開く</a>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: MELBOURNE ZOO -->
-    <section id="zoo">
-      <div class="section-title">🐨 トラム直通5分！Melbourne Zoo（動物園）</div>
-      <div class="img-grid-2">
-        <div class="img-card">
-          <img src="images/koala.jpg" alt="コアラ">
-          <div class="img-card-caption">コアラ（目線の高さで間近に観察）</div>
-        </div>
-        <div class="img-card">
-          <img src="images/kangaroo_joey.jpg" alt="カンガルーの親子">
-          <div class="img-card-caption">カンガルー（柵のない同じ空間を歩ける）</div>
-        </div>
-      </div>
-
-      <div class="card card-highlight">
-        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">子どもが大興奮する見どころ</div>
-        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6;">
-          <li><strong>🦘 カンガルーウォークスルー:</strong> 柵がなく、くつろぐカンガルーの横を歩くスリル！</li>
-          <li><strong>🐨 コアラツリートップウォーク:</strong> ユーカリの木の枝と同じ高さのデッキから観察。</li>
-          <li><strong>🧑‍⚕️ Keeper Kids:</strong> 獣医や飼育員の制服を着てごっこ遊びができる室内プレイスペース（雨の日も◎）。</li>
-          <li><strong>🎟️ 子ども無料:</strong> 土日・祝日・スクールホリデーは子ども（4〜15歳）入場無料！</li>
-        </ul>
-        <div class="btn-row">
-          <a href="https://maps.google.com/?q=Melbourne+Zoo" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 6: MELBOURNE MUSEUM -->
-    <section id="museum">
-      <div class="section-title">🦖 Melbourne Museum & 恐竜・子ども庭園</div>
-      <div class="img-grid-2">
-        <div class="img-card">
-          <img src="images/dinosaur.jpg" alt="恐竜骨格標本">
-          <div class="img-card-caption">実物大恐竜の化石がズラリ</div>
-        </div>
-        <div class="img-card">
-          <img src="images/carlton_gardens.jpg" alt="木製遊具">
-          <div class="img-card-caption">Carlton Gardens お城の木製遊具</div>
-        </div>
-      </div>
-
-      <div class="card card-highlight">
-        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">未就学児専用ギャラリー＆屋外遊具</div>
-        <p style="font-size: 12px; margin-bottom: 6px;">
-          南半球最大の博物館。<strong>16歳以下はいつでも入場無料！</strong>
-        </p>
-        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6;">
-          <li><strong>👶 Pauline Gandel Children's Gallery:</strong> 靴を脱いで遊べる未就学児専用エリア。砂場で恐竜の骨掘り、ダンスフロア、カメレオントンネル。</li>
-          <li><strong>🏰 Carlton Gardens Playground:</strong> 博物館すぐ横にある巨大な木製お城アスレチック。</li>
-        </ul>
-        <div class="btn-row">
-          <a href="https://maps.google.com/?q=Melbourne+Museum" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 7: ST KILDA BEACH -->
-    <section id="beach">
-      <div class="section-title">🏖️ 海辺へ！St Kilda Beach & ルナパーク</div>
-      <div class="img-grid-2">
-        <div class="img-card">
-          <img src="images/st_kilda.jpg" alt="セントキルダ桟橋">
-          <div class="img-card-caption">St Kilda Pier（野生ペンギンの岩場）</div>
-        </div>
-        <div class="img-card">
-          <img src="images/luna_park.jpg" alt="ルナパークの顔">
-          <div class="img-caption" style="padding: 4px 8px; font-size: 11px; background: white; font-weight: 600;">Luna Park（歴史ある遊園地ゲート）</div>
-        </div>
-      </div>
-
-      <div class="card card-highlight">
-        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">🐧 夕暮れの野生フェアリーペンギン無料観察</div>
-        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
-          セントキルダ桟橋の先端にある防波堤では、日没時に海から上がってくる世界最小のフェアリーペンギンを無料で見学できます（フラッシュ撮影禁止）。
-        </p>
-        <p style="font-size: 11.5px; color: #475569;">
-          レトロな「ルナ・パーク」のメリーゴーラウンドや、Acland Stの美味しいケーキ屋・ジェラート屋散策も楽しめます。
-        </p>
-        <div class="btn-row">
-          <a href="https://maps.google.com/?q=St+Kilda+Pier" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 8: BOTANIC GARDENS -->
+    <!-- SECTION 6: ROYAL BOTANIC GARDENS -->
     <section id="botanic">
-      <div class="section-title">🌿 王立植物園 & 子ども庭園</div>
-      <div class="img-card">
-        <img src="images/botanic_lake.jpg" alt="王立植物園の湖">
-        <div class="img-card-caption">Ornamental Lake（黒鳥が泳ぐ美しい湖・入園無料）</div>
-      </div>
-
-      <div class="card card-highlight">
-        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">💧 Ian Potter Children's Garden（子ども庭園）</div>
-        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
-          植物園内にある子ども専用の安全な遊びの庭園。小川での水遊び、竹林迷路、秘密のツリーハウスがあり、芝生ピクニックに最適です。
-        </p>
-        <div class="btn-row">
-          <a href="https://maps.google.com/?q=Ian+Potter+Foundation+Children%27s+Garden" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 9: AQUARIUM & SOUTHBANK -->
-    <section id="aquarium">
-      <div class="section-title">🦈 シーライフ水族館 & サウスバンク</div>
-      <div class="img-card">
-        <img src="images/aquarium_penguin.jpg" alt="キングペンギンのペスト">
-        <div class="img-card-caption">SEA LIFEのキングペンギン（話題の巨大ヒナ Pesto）</div>
-      </div>
-
-      <div class="card card-highlight">
-        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">トラム58番で直通15分！屋内アクアリウム</div>
-        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
-          頭上をサメやエイが通り過ぎる海底トンネル、南極のペンギン、5m超の巨大ワニ。ヤラ川沿いのサウスバンク遊歩道は段差がなくベビーカー散歩に最適。
-        </p>
-        <div class="btn-row">
-          <a href="https://maps.google.com/?q=SEA+LIFE+Melbourne+Aquarium" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 10: STATE LIBRARY -->
-    <section id="library">
-      <div class="section-title">📚 ビクトリア州立図書館 & 子どもフロア</div>
-      <div class="img-card">
-        <img src="images/state_library.jpg" alt="ビクトリア州立図書館ドーム">
-        <div class="img-card-caption">八角形の壮大なドーム閲覧室（入館無料・トラム10分）</div>
-      </div>
-
-      <div class="card card-highlight">
-        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">🏰 無料の子どもフロア「Children's Quarter」</div>
-        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
-          2階建てのお城型本棚、大型ソフトブロック、絵本コーナー、靴を脱いでくつろげるクッションフロア。冷暖房完備で、雨の日や暑い日の休憩に最高の穴場です。
-        </p>
-        <div class="btn-row">
-          <a href="https://maps.google.com/?q=State+Library+Victoria" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 11: TRAM -->
-    <section id="tram">
-      <div class="section-title">🚋 子連れトラム移動術＆ルール</div>
+      <div class="section-title">🌿 王立植物園＆子ども庭園（トラム5分）</div>
       <div class="img-grid-2">
         <div class="img-card">
-          <img src="images/tram.jpg" alt="C-Classトラム">
-          <div class="img-card-caption">C-Class 低床トラム（段差なし乗車）</div>
+          <img src="images/botanic_gardens.jpg" alt="植物園の緑">
+          <div class="img-card-caption">広大な芝生と世界の巨木が広がる庭園</div>
         </div>
         <div class="img-card">
-          <img src="images/tram_eclass.jpg" alt="E-Class大型トラム">
-          <div class="img-card-caption">E-Class 大型トラム（ベビーカー優先席）</div>
+          <img src="images/botanic_lake.jpg" alt="植物園の湖">
+          <div class="img-card-caption">黒鳥（ブラックスワン）が泳ぐ大池</div>
         </div>
       </div>
 
-      <div class="card card-highlight">
-        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">運賃ルール＆ベビーカー乗車のコツ</div>
+      <div class="card card-warm">
+        <div style="font-size: 13px; font-weight: 700; color: #b45309; margin-bottom: 4px;">イアン・ポッター・チルドレンズ・ガーデン（無料）</div>
+        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+          サウスヤラからトラム58番で北へわずか5分（徒歩でも15分）。子どもが自然と五感で触れ合える世界的に有名な子ども専用ガーデンです。
+        </p>
         <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6;">
-          <li><strong>4歳以下:</strong> 運賃は**完全無料**（カード不要）。</li>
-          <li><strong>5歳以上:</strong> 「Child myki」で大人の半額（1日上限約$5.30、土日は約$1.80）。</li>
-          <li><strong>ベビーカー乗車:</strong> 低床トラム（Low-Floor Tram）はたたまずそのまま乗車可能。ドア付近の優先スペースでブレーキをロック。</li>
-          <li><strong>⚠️ Stop 19での注意:</strong> 宿泊先のStop 19は無料トラムゾーン（Free Tram Zone）の外側です。乗車時に車内のリーダーに必ずタッチオン（Touch On）してください。</li>
+          <li><strong>水遊びスプリンクラー:</strong> 暖かい日は地面からミストや水が吹き出し大はしゃぎ（着替え・ミニタオル必携）。</li>
+          <li><strong>泥遊び・竹林の迷路:</strong> 竹藪のトンネルやツリーハウス、登れる巨木。</li>
+          <li><strong>入園料:</strong> 完全無料。水曜〜日曜およびビクトリア州学休期間にオープン。</li>
         </ul>
+        <div class="btn-row">
+          <a href="https://maps.google.com/?q=Ian+Potter+Foundation+Children%27s+Garden" target="_blank" class="btn btn-map">📍 子ども庭園をGoogleマップで開く</a>
+        </div>
       </div>
     </section>
 
-    <!-- SECTION 12: SUPERMARKET -->
+    <!-- SECTION 7: SUPERMARKETS & DAILY SHOPPING -->
     <section id="supermarket">
-      <div class="section-title">🛒 スーパー買い出し術（Woolworths & ALDI）</div>
-      <div class="img-grid-2">
-        <div class="img-card">
-          <img src="images/supermarket_aisle.jpg" alt="スーパー店内">
-          <div class="img-card-caption">広々とした通路でベビーカーも快適</div>
-        </div>
-        <div class="img-card">
-          <img src="images/fresh_fruit.jpg" alt="果物売り場">
-          <div class="img-card-caption">新鮮なイチゴ、バナナ、リンゴ</div>
-        </div>
-      </div>
-
-      <div class="card card-highlight">
-        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">🍎 名物「Free Fruit for Kids（子ども用無料フルーツ）」</div>
-        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
-          徒歩6分のWoolworths青果コーナー入口には、子どもが自由に食べて良いバナナやりんごのカゴが置いてあります。買い物中のぐずり対策に最高です。
-        </p>
+      <div class="section-title">🛒 スーパー買い出し・日用品（徒歩5〜8分）</div>
+      <div class="img-card">
+        <img src="images/fresh_fruit.jpg" alt="フルーツ売り場">
+        <div class="img-card-caption">甘くてみずみずしいオーストラリア産フルーツ</div>
       </div>
 
       <div class="card">
-        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">おすすめ現地キッズおやつ＆調達先</div>
-        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6;">
-          <li><strong>パウチヨーグルト（Pauls / Chobani Kids）:</strong> スプーン不要で吸えるパウチ型。</li>
-          <li><strong>Tiny Teddy ビスケット:</strong> 可愛い小熊型クッキー。</li>
-          <li><strong>おむつ（Nappies）:</strong> HuggiesやBabyLoveがWoolworthsで調達可能。おしりふきは「Wipes」。</li>
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">20日間の自炊・生活用品調達スポット</div>
+        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.65;">
+          <li><strong>プラーラン市場（徒歩6分）:</strong> 最高の肉・魚・オーガニック野菜・パン・果物はここで。</li>
+          <li><strong>Coles Prahran & Woolworths Prahran（徒歩8分）:</strong> Prahran Square地下に大型店舗が揃い、深夜まで営業。牛乳、ヨーグルト、オムツ、離乳食、お菓子が一挙に揃います。</li>
+          <li><strong>Big W（Vogue Plaza内 / 徒歩10分）:</strong> チャペル通り沿い。激安の子ども服、パジャマ、水着、絵本、おもちゃが何でも揃い長期滞在の強い味方。</li>
+          <li><strong>Chemist Warehouse South Yarra（徒歩5分）:</strong> 巨大ドラッグストア。日焼け止め、ベビーソープ、子供用解熱シロップ（Panadol）が格安。</li>
         </ul>
         <div class="btn-row">
-          <a href="https://maps.google.com/?q=Woolworths+North+Melbourne" target="_blank" class="btn btn-map">📍 Woolworths (徒歩6分) を開く</a>
-          <a href="https://maps.google.com/?q=ALDI+North+Melbourne" target="_blank" class="btn btn-map">📍 ALDI (徒歩10分) を開く</a>
+          <a href="https://maps.google.com/?q=Coles+Prahran" target="_blank" class="btn btn-map">📍 Coles Prahran を開く</a>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 13: QUEEN VICTORIA MARKET -->
-    <section id="qvm">
-      <div class="section-title">🍎 クイーン・ヴィクトリア・マーケット散策</div>
-      <div class="img-grid-2">
-        <div class="img-card">
-          <img src="images/qvm_street.jpg" alt="QVM入口">
-          <div class="img-card-caption">南半球最大の歴史ある市場</div>
-        </div>
-        <div class="img-card">
-          <img src="images/donuts.jpg" alt="ジャムドーナツ">
-          <div class="img-card-caption">名物！熱々ジャムドーナツ</div>
-        </div>
-      </div>
-
-      <div class="card card-highlight">
-        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">トラム59番で約5分！食育と食べ歩き</div>
-        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
-          アメリカン・ドーナツ・キッチンの揚げたてジャムドーナツ、新鮮なイチゴやブドウの味見、コアラやカンガルーのぬいぐるみ、デリホールでのクロワッサンランチ。
-        </p>
-        <p style="font-size: 11.5px; color: #dc2626; font-weight: 600;">
-          ※ 月曜・水曜は休場（火・木・金・土・日営業）。
-        </p>
-        <div class="btn-row">
-          <a href="https://maps.google.com/?q=Queen+Victoria+Market" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 14: CAFE & BABYCCINO -->
+    <!-- SECTION 8: CAFE & BABYCCINO -->
     <section id="cafe">
-      <div class="section-title">☕ 親子カフェタイム＆外食ガイド</div>
+      <div class="section-title">☕ 親子カフェタイム＆名物「Babyccino」</div>
       <div class="img-grid-2">
         <div class="img-card">
           <img src="images/babyccino_real.jpg" alt="ベビーチーノ">
-          <div class="img-card-caption">Babyccino（ふわふわ泡＋マシュマロ）</div>
+          <div class="img-card-caption">Babyccino（ふわふわミルク泡＋マシュマロ）</div>
         </div>
         <div class="img-card">
           <img src="images/coffee.jpg" alt="フラットホワイト">
-          <div class="img-card-caption">大人は極上のFlat Whiteで乾杯</div>
+          <div class="img-card-caption">大人は極上のFlat Whiteで一服</div>
         </div>
       </div>
 
       <div class="card card-highlight">
-        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">オーストラリアの魔法「Babyccino（ベビーチーノ）」</div>
+        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">オーストラリアの魔法ドリンク「Babyccino（ベビーチーノ）」</div>
         <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
-          温かいスチームミルクの泡にココアパウダーを振り、マシュマロを添えたキッズ専用ドリンク（無料〜$2程度）。親のコーヒーと一緒に「Can I get a Flat White and a Babyccino, please?」と頼めば、パパ・ママと同じカップで大人気分を味わえます。
+          温めたスチームミルクのふわふわ泡にココアパウダーを振り、マシュマロを添えたキッズ専用ドリンク（無料〜$2程度）。サウスヤラのどのカフェでも「Flat white and babyccino please!」と頼めば喜んで作ってくれます。テラス席が多くベビーカーでも気兼ねなく入れます。
         </p>
-      </div>
-
-      <div class="card">
-        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">近隣のおすすめカフェ</div>
-        <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
-          <strong>Auction Rooms Cafe (徒歩10分):</strong> 元競売場を改装した開放的な店内はベビーカーも楽々。中庭テラスあり。<br>
-          <strong>RCH小児病院内カフェ (徒歩1分):</strong> 巨大水槽を見ながらテイクアウトしたコーヒーをベンチで。
-        </p>
-        <div class="btn-row">
-          <a href="https://maps.google.com/?q=Auction+Rooms+Cafe+North+Melbourne" target="_blank" class="btn btn-map">📍 Auction Rooms を開く</a>
-        </div>
       </div>
     </section>
 
-    <!-- SECTION 15: MEDICAL & HOSPITAL -->
+    <!-- SECTION 9: MEDICAL & EMERGENCY -->
     <section id="medical">
-      <div class="section-title">🏥 小児医療・緊急サポート体制</div>
+      <div class="section-title">🏥 救急医療・小児サポート体制</div>
       <div class="img-grid-2">
         <div class="img-card">
-          <img src="images/rch_atrium.jpg" alt="病院アトリウム">
-          <div class="img-card-caption">小児病院アトリウム（巨大水槽＆ミーアキャット）</div>
+          <img src="images/sy_alfred_hospital.jpg" alt="アルフレッド病院">
+          <div class="img-card-caption">The Alfred 総合病院 ER（Commercial Rd沿い）</div>
         </div>
         <div class="img-card">
-          <img src="images/rch.jpg" alt="小児病院外観">
-          <div class="img-card-caption">The Royal Children's Hospital 外観（徒歩1分）</div>
+          <img src="images/rch.jpg" alt="ロイヤルチルドレンズ小児病院">
+          <div class="img-card-caption">RCH小児専門病院（トラム58番直通）</div>
         </div>
       </div>
 
       <div class="card card-alert">
-        <div style="font-size: 13px; font-weight: 700; color: #b91c1c; margin-bottom: 4px;">南半球最高峰の小児救急（ER）が目の前！</div>
+        <div style="font-size: 13px; font-weight: 700; color: #b91c1c; margin-bottom: 4px;">近隣に州内最高峰の2大病院が控える安心環境！</div>
         <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
-          夜間の急な発熱、嘔吐、ケガの際は、宿泊先正面の「The Royal Children's Hospital Emergency」へ徒歩1分で駆け込めます。24時間対応。
+          夜間の急病やケガでも、サウスヤラ周辺はメルボルン屈指の医療集積地です。
         </p>
         <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6; color: #475569;">
-          <li><strong>持参物:</strong> お子様と保護者のパスポート、海外旅行保険証。</li>
-          <li><strong>通訳:</strong> 医療通訳を無料で手配してもらえます（「We need a Japanese interpreter」）。</li>
-          <li><strong>常備薬:</strong> 薬局で「Children's Panadol（アセトアミノフェン解熱シロップ）」が処方箋なしで購入可。</li>
+          <li><strong>The Alfred Hospital（24h救急救命センター）:</strong> 宿から車で4分 / トラム72番で直通。ビクトリア州最大の総合救急病院。</li>
+          <li><strong>The Royal Children's Hospital (RCH):</strong> 南半球最高峰の小児専門病院へ、トゥーラック通りから**トラム58番で乗り換えなし1本直通**！24時間小児ER受付。</li>
+          <li><strong>常備薬:</strong> 薬局で「Children's Panadol（アセトアミノフェン解熱シロップ）」が処方箋なしですぐ購入可能。</li>
         </ul>
         <div class="btn-row">
-          <a href="tel:+61393455522" class="btn btn-call">📞 小児病院ERに電話</a>
-          <a href="https://maps.google.com/?q=The+Royal+Children%27s+Hospital+Melbourne" target="_blank" class="btn btn-map">📍 Googleマップで開く</a>
+          <a href="tel:+61390762000" class="btn btn-call">📞 The Alfred ERに電話</a>
+          <a href="tel:+61393455522" class="btn btn-primary">📞 RCH小児ERに電話</a>
+          <a href="https://maps.google.com/?q=The+Alfred+Hospital+Melbourne" target="_blank" class="btn btn-map">📍 Alfred病院MAP</a>
         </div>
-      </div>
-
-      <div class="card card-highlight">
-        <div style="font-size: 13px; font-weight: 700; color: #166534; margin-bottom: 4px;">🐠 病院1階の巨大水槽＆本物のミーアキャット！</div>
-        <p style="font-size: 12px; line-height: 1.55;">
-          病院の1階エントランスは自由に出入りでき、サンゴ礁の巨大円柱水槽や本物のミーアキャット飼育ケージがあります。ちょっとしたお散歩や雨の日の癒やしスポットとしても最高です。
-        </p>
       </div>
     </section>
 
-    <!-- SECTION 16: LONG STAY & PACKING -->
-    <section id="longstay">
-      <div class="section-title">🧺 20日間長期滞在の生活術＆チェックリスト</div>
+    <!-- SECTION 10: AIRPORT ACCESS -->
+    <section id="airport">
+      <div class="section-title">✈️ 空港アクセス（車・タクシー約30〜35分）</div>
       <div class="img-card">
-        <img src="images/laundromat.jpg" alt="コインランドリー">
-        <div class="img-card-caption">近隣のLaundromat（約45分で洗濯・乾燥完了）</div>
+        <img src="images/melbourne_airport.jpg" alt="メルボルン国際空港">
+        <div class="img-card-caption">メルボルン国際空港（タラマリン空港 MEL）</div>
       </div>
 
       <div class="card">
-        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">生活術のポイント</div>
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">空港 ⇄ 10B Surrey Road の移動方法</div>
         <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6;">
-          <li><strong>洗濯（Laundromat）:</strong> 宿に洗濯機がない場合や大量のシーツ・服をまとめ洗いしたい時は近隣のコインランドリーへ。</li>
-          <li><strong>衣料・日用品の激安調達:</strong> 子どもの着替え、サンダル、おもちゃの買い足しは「Kmart」や「Big W」が激安でおすすめ。</li>
-          <li><strong>紫外線対策（SunSmart）:</strong> オーストラリアの紫外線は強力。現地スーパーで「Cancer Council Kids」の日焼け止めと帽子を常用してください。</li>
-          <li><strong>気候対策:</strong> 「1日に四季がある」ため、夏でも夕方に15℃近くまで冷え込むことがあります。薄手の羽織る上着を常に携帯しましょう。</li>
+          <li><strong>🚕 Uber / タクシー（推奨）:</strong> 空港から高速CityLink〜Monash Freeway経由で約30〜35分（料金$65〜$85前後）。スーツケースやベビーカー、小さなお子様連れならドア・ツー・ドアのタクシー/Uberが圧倒的に楽です。</li>
+          <li><strong>🚆 SkyBus + 電車ルート:</strong> 空港からスカイバス（赤い2階建てバス）で都心サザンクロス駅まで25分。そこから電車に乗り換え3駅（約7分）でサウスヤラ駅到着。</li>
+        </ul>
+        <div class="btn-row">
+          <a href="https://maps.google.com/maps/dir/?api=1&origin=Melbourne+Airport&destination=10B+Surrey+Road,+South+Yarra+VIC+3141" target="_blank" class="btn btn-map">🧭 空港からのナビを開く</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 11: EXCURSIONS FOR KIDS -->
+    <section id="kids-destinations">
+      <div class="section-title">🎡 子どもが喜ぶメルボルン人気スポット</div>
+
+      <!-- Zoo -->
+      <div id="zoo" style="margin-bottom: 16px;">
+        <div class="img-grid-2">
+          <div class="img-card">
+            <img src="images/koala.jpg" alt="コアラ">
+            <div class="img-card-caption">ユーカリの木でお昼寝するコアラ</div>
+          </div>
+          <div class="img-card">
+            <img src="images/kangaroo.jpg" alt="カンガルー">
+            <div class="img-card-caption">目の前をぴょんぴょん跳ねるカンガルー</div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-size: 13px; font-weight: 700;">🐨 メルボルン動物園（Melbourne Zoo）</div>
+          <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+            南半球最古の動物園。カンガルー広場は柵がなく真横を歩けます。トラム58番で直通アクセス可能！週末・祝日は子ども入場無料。
+          </p>
+          <div class="btn-row">
+            <a href="https://maps.google.com/?q=Melbourne+Zoo" target="_blank" class="btn btn-map">📍 動物園を開く</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Museum -->
+      <div id="museum" style="margin-bottom: 16px;">
+        <div class="img-grid-2">
+          <div class="img-card">
+            <img src="images/museum.jpg" alt="メルボルン博物館">
+            <div class="img-card-caption">世界遺産カールトン庭園内の巨大博物館</div>
+          </div>
+          <div class="img-card">
+            <img src="images/dinosaur.jpg" alt="トリケラトプス骨格">
+            <div class="img-card-caption">世界最高峰のトリケラトプス全身化石</div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-size: 13px; font-weight: 700;">🦖 メルボルン博物館＆恐竜ギャラリー</div>
+          <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+            大迫力の巨大恐竜骨格や生きた熱帯雨林温室。幼児専用の「Pauline Gandel Children's Gallery」はブロック遊びや砂場・発掘体験ができます。高校生以下入場無料！
+          </p>
+          <div class="btn-row">
+            <a href="https://maps.google.com/?q=Melbourne+Museum" target="_blank" class="btn btn-map">📍 博物館を開く</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beach & St Kilda -->
+      <div id="beach" style="margin-bottom: 16px;">
+        <div class="img-card">
+          <img src="images/luna_park.jpg" alt="ルナパーク">
+          <div class="img-card-caption">セントキルダ海岸のランドマーク「Luna Park」</div>
+        </div>
+        <div class="card">
+          <div style="font-size: 13px; font-weight: 700;">🏖️ セントキルダ海岸＆野生ペンギン（トラム78番直通15分）</div>
+          <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+            宿からチャペル通りの**トラム78番に一本乗るだけ**で海の目の前へ！遠浅で波が穏やかなビーチ、名物遊園地Luna Park、夕暮れに桟橋に帰ってくる野生のフェアリーペンギンが見られます。
+          </p>
+          <div class="btn-row">
+            <a href="https://maps.google.com/?q=St+Kilda+Pier" target="_blank" class="btn btn-map">📍 セントキルダ桟橋を開く</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aquarium -->
+      <div id="aquarium" style="margin-bottom: 16px;">
+        <div class="img-card">
+          <img src="images/aquarium_penguin.jpg" alt="水族館ペンギン">
+          <div class="img-card-caption">SEA LIFE メルボルン水族館（キングペンギン）</div>
+        </div>
+        <div class="card">
+          <div style="font-size: 13px; font-weight: 700;">🦈 SEA LIFE メルボルン水族館（電車で5分）</div>
+          <p style="font-size: 12px; line-height: 1.55; margin-bottom: 6px;">
+            サウスヤラ駅から電車でフリンダース駅へ5分、そこからヤラ川沿いを散歩してすぐ。巨大ワニ、エイ、サメの海中トンネル、雪山エリアのペンギンが目の前に！雨の日の定番です。
+          </p>
+          <div class="btn-row">
+            <a href="https://maps.google.com/?q=SEA+LIFE+Melbourne+Aquarium" target="_blank" class="btn btn-map">📍 水族館を開く</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 12: LONG STAY & CHECKLIST -->
+    <section id="longstay">
+      <div class="section-title">🧺 20日間長期滞在の生活術＆持ち物リスト</div>
+      <div class="img-card">
+        <img src="images/laundromat.jpg" alt="コインランドリー">
+        <div class="img-card-caption">近隣のコインランドリー（Laundromat）</div>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">20日間を快適に過ごす知恵袋</div>
+        <ul style="padding-left: 18px; font-size: 11.5px; line-height: 1.6;">
+          <li><strong>洗濯（Laundromat）:</strong> 宿に洗濯機がない場合やシーツ・バスタオルを丸ごと乾燥させたい時は、チャペル通りやマルバーン通り沿いのコインランドリーへ（約45分でフカフカに乾燥）。</li>
+          <li><strong>紫外線対策（SunSmart）:</strong> 南半球の紫外線は強烈。曇りの日でも外出時は帽子＋キッズ用日焼け止め（現地薬局のCancer Council Kids推奨）を習慣に。</li>
+          <li><strong>「1日に四季がある」気候対策:</strong> メルボルンは日中30℃でも夕方に冷たい風が吹き15℃まで急降下することがあります。外出時は必ず薄手のウインドブレーカーやカーディガンを携帯してください。</li>
         </ul>
       </div>
 
       <div class="card card-warm">
         <div style="font-size: 13px; font-weight: 700; color: #b45309; margin-bottom: 8px;">✅ お出かけ持ち物チェックリスト（タップでチェック）</div>
         <div id="checklist">
-          <label class="check-item"><input type="checkbox"> 水筒（公園や駅で無料給水可能）</label>
-          <label class="check-item"><input type="checkbox"> 着替え1組＆ミニタオル（水遊び・泥用）</label>
+          <label class="check-item"><input type="checkbox"> 水筒（公園や駅に無料給水スタンドあり）</label>
+          <label class="check-item"><input type="checkbox"> 着替え1組＆ミニタオル（水遊び・泥遊び用）</label>
           <label class="check-item"><input type="checkbox"> ウェットティッシュ（食事・おやつ用）</label>
-          <label class="check-item"><input type="checkbox"> 小分けおやつ（Tiny Teddyやフルーツ）</label>
+          <label class="check-item"><input type="checkbox"> 小分けおやつ（果物やりんご、Tiny Teddy）</label>
           <label class="check-item"><input type="checkbox"> 羽織れる上着（急な冷え込み・冷房対策）</label>
           <label class="check-item"><input type="checkbox"> 日焼け止め＆つば広帽子</label>
-          <label class="check-item"><input type="checkbox"> mykiカード（またはスマホGoogle Wallet）</label>
+          <label class="check-item"><input type="checkbox"> mykiカード（大人のみ、4歳以下無料）</label>
         </div>
       </div>
     </section>
@@ -1327,7 +1262,7 @@
 
   <!-- Bottom Sticky Nav Bar -->
   <nav class="bottom-nav">
-    <a href="https://www.google.com/maps/search/?api=1&query=-37.7961,144.9493" target="_blank" rel="noopener noreferrer" class="nav-item" style="color: #2563eb;">
+    <a href="https://www.google.com/maps/search/?api=1&query=10B+Surrey+Road,+South+Yarra+VIC+3141" target="_blank" rel="noopener noreferrer" class="nav-item" style="color: #2563eb;">
       <span class="nav-icon">📍</span>
       <span>宿泊先Map</span>
     </a>
@@ -1335,46 +1270,46 @@
       <span class="nav-icon">🗺️</span>
       <span>4段地図</span>
     </a>
-    <a href="#tram" class="nav-item">
-      <span class="nav-icon">🚋</span>
-      <span>トラム</span>
+    <a href="#market" class="nav-item">
+      <span class="nav-icon">🍎</span>
+      <span>市場</span>
     </a>
-    <a href="#supermarket" class="nav-item">
-      <span class="nav-icon">🛒</span>
-      <span>買物</span>
+    <a href="#train" class="nav-item">
+      <span class="nav-icon">🚋</span>
+      <span>電車トラム</span>
     </a>
     <a href="#parks" class="nav-item">
       <span class="nav-icon">🌳</span>
-      <span>遊び場</span>
+      <span>公園</span>
     </a>
     <a href="#medical" class="nav-item">
       <span class="nav-icon">🏥</span>
-      <span>小児医療</span>
+      <span>救急病院</span>
     </a>
   </nav>
 
   <script>
-    // Map stage descriptions
+    // Map stage descriptions for South Yarra
     const mapData = [
       {
         title: "① オーストラリア全土におけるメルボルン",
         step: "Step 1/4 (大陸スケール)",
-        desc: "オーストラリア大陸南東部のビクトリア州都。日本（成田/羽田）から直行便で約10時間。時差はわずか+1時間（サマータイム時は+2時間）で時差ボケが少ないのが魅力です。南半球のため日本と季節が真逆です。"
+        desc: "オーストラリア大陸南東部のビクトリア州都。日本（成田/羽田）から直行便で約10時間。時差はわずか+1時間（サマータイム時は+2時間）で子どもの時差ボケ負担が極めて少ないのが魅力です。"
       },
       {
-        title: "② 都市圏スケール（空港・海・高速CityLink）",
+        title: "② 都市圏スケール（空港・サウスヤラ・セントキルダ海）",
         step: "Step 2/4 (都市圏スケール)",
-        desc: "メルボルン空港（MEL）から都心へ伸びる高速CityLinkは、ちょうど宿泊先の目の前（Flemington Rd出口）が終点！混雑する市内中心を通らず、空港からノンストップ約20分で直着できます。南へ下れば海（セント・キルダ）へもトラム直通です。"
+        desc: "メルボルン空港（MEL）から都心東南のサウスヤラまでは高速CityLink/Monash経由で車約30-35分。南へトラム78番で下れば、セントキルダビーチや遊園地ルナパーク・野生ペンギンへ直通です。"
       },
       {
-        title: "③ 都心・主要スポットとの距離感（放射状マップ）",
+        title: "③ 都心・主要スポットとの距離感（電車わずか5分！）",
         step: "Step 3/4 (アクセススケール)",
-        desc: "宿泊先を中心とした半径2km圏内。北へトラム5分で「動物園」、北西へ徒歩2分で「ロイヤルパーク遊び場」、正面徒歩1分に「小児病院」、南東へトラム5分で「QVM市場」、南へトラム10分で「CBD中心・州立図書館」に直結しています。"
+        desc: "サウスヤラ駅からはフリンダース駅（都心CBD）まで快速でわずか2駅・約5分！西へ徒歩6分でプラーラン市場、北へトラム5分で王立植物園、北西へトラム直通で動物園・小児病院へ直結しています。"
       },
       {
-        title: "④ 宿泊先 至近生活圏マップ（徒歩5分〜10分圏内）",
+        title: "④ 宿泊先 至近生活圏マップ（10B Surrey Road周辺）",
         step: "Step 4/4 (生活圏スケール)",
-        desc: "大通りFlemington Road沿い、Stop 19トラム停が目の前。道路向かいが広大なロイヤルパークと小児病院。Melrose Stを南西へ徒歩6分で大型スーパーWoolworths、南へ徒歩10分でカフェが集まるErrol Stです。"
+        desc: "閑静なSurrey Road沿い。徒歩1分にSurrey Road Park（滑り台遊具）、徒歩3分でチャペル通り（トラム78番）、徒歩6分でプラーラン市場・新鮮野菜果物、徒歩6分でトゥーラック通り（トラム58番）。"
       }
     ];
 
@@ -1395,9 +1330,10 @@
       // Update text
       document.getElementById('map-info-title').innerHTML = `<span>${mapData[index].title}</span><span style="font-size: 10px; color: var(--primary); font-weight: bold;">${mapData[index].step}</span>`;
       document.getElementById('map-info-desc').innerText = mapData[index].desc;
+      
       const actionEl = document.getElementById('map-info-action');
       if (index === 3) {
-        actionEl.innerHTML = '<div style="margin-top: 10px;"><a href="https://www.google.com/maps/search/?api=1&query=-37.7961,144.9493" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display:inline-flex; align-items:center; gap:6px; font-size:12px; padding:8px 14px; background:#2563eb; color:#fff; text-decoration:none; border-radius:8px; box-shadow:0 2px 6px rgba(37,99,235,0.25);">📍 宿泊先ピンをGoogleマップで開く ↗</a></div>';
+        actionEl.innerHTML = '<div style="margin-top: 10px;"><a href="https://www.google.com/maps/search/?api=1&query=10B+Surrey+Road,+South+Yarra+VIC+3141" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display:inline-flex; align-items:center; gap:6px; font-size:12px; padding:8px 14px; background:#2563eb; color:#fff; text-decoration:none; border-radius:8px; box-shadow:0 2px 6px rgba(37,99,235,0.25);">📍 宿泊先ピンをGoogleマップで開く ↗</a></div>';
       } else {
         actionEl.innerHTML = '';
       }
@@ -1417,35 +1353,34 @@
 
     // Fullscreen Map Modal
     function openMapModal() {
-      const activeSvg = document.querySelector('.map-panel.active .map-svg-wrap').innerHTML;
-      document.getElementById('modal-map-container').innerHTML = activeSvg;
-      document.getElementById('mapModal').classList.add('active');
-    }
-    function closeMapModal(e) {
-      document.getElementById('mapModal').classList.remove('active');
+      const activeSvg = document.querySelector(`.map-panel#map-panel-${currentMapIndex} svg`);
+      if (activeSvg) {
+        const container = document.getElementById('modal-map-container');
+        container.innerHTML = activeSvg.outerHTML;
+        document.getElementById('mapModal').style.display = 'flex';
+      }
     }
 
-    // Touch swipe support for maps
+    function closeMapModal(e) {
+      document.getElementById('mapModal').style.display = 'none';
+    }
+
+    // Touch swipe support on map viewport
     let touchStartX = 0;
-    const viewport = document.querySelector('.map-viewport');
-    viewport.addEventListener('touchstart', e => {
+    let touchEndX = 0;
+    const vp = document.getElementById('map-viewport');
+    vp.addEventListener('touchstart', e => {
       touchStartX = e.changedTouches[0].screenX;
     }, {passive: true});
-    viewport.addEventListener('touchend', e => {
-      let diff = e.changedTouches[0].screenX - touchStartX;
-      if (diff > 50) prevMap();
-      else if (diff < -50) nextMap();
-    }, {passive: true});
 
-    // Checklist state persistence via localStorage
-    const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"]');
-    checkboxes.forEach((cb, index) => {
-      const saved = localStorage.getItem('trip_checklist_' + index);
-      if (saved === 'true') cb.checked = true;
-      cb.addEventListener('change', () => {
-        localStorage.setItem('trip_checklist_' + index, cb.checked);
-      });
-    });
+    vp.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) {
+        nextMap();
+      } else if (touchEndX - touchStartX > 50) {
+        prevMap();
+      }
+    }, {passive: true});
   </script>
 </body>
 </html>
